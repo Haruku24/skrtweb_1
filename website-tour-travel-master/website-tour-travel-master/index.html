@@ -6,6 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .event-slider {
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .event-slider button {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+      .event-slider .prev {
+        left: 10px;
+      }
+      .event-slider .next {
+        right: 10px;
+      }
+      .event-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+      }
+      .event1 {
+        min-width: 300px;
+        flex: 0 0 auto;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 0 10px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+      }
+      .btn_all_events, .btn_transaksi {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s;
+        margin-top: 20px;
+      }
+      .btn_all_events:hover, .btn_transaksi:hover {
+        transform: scale(1.1);
+      }
+      .btn_all_events:active, .btn_transaksi:active {
+        transform: scale(0.9);
+      }
+      .btn_pesan {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -22,7 +83,7 @@
           </a>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#events">Events</a></li>
             <li><a href="#support">Support</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#team">Team</a></li>
@@ -35,9 +96,7 @@
     <div class="layar-penuh">
       <header id="home">
         <div class="overlay"></div>
-        <video autoplay muted loop>
-          <source src="asset/video-indonesia.mp4" type="video/mp4" />
-        </video>
+        <img src="asset/background-bromo.jpg" alt="Header Image" />
         <div class="intro">
           <h3>Visit Indonesia</h3>
           <p>
@@ -50,20 +109,34 @@
         </div>
       </header>
       <main>
-        <section id="aboutus">
+        <section id="events">
           <div class="layar-dalam">
-            <h3>About Us</h3>
+            <h3>Daftar Event</h3>
             <p class="ringkasan">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Obcaecati, cupiditate.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+              laborum!
             </p>
-            <div class="konten-isi">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
-                iure vero soluta exercitationem deleniti possimus cupiditate
-                autem facilis magni illum?
-              </p>
+            <div class="event-slider">
+              <button class="prev" onclick="slideEvent(-1)">&#10094;</button>
+              <div class="event-container">
+                <div class="event1">
+                  <img src="asset/tim1.jpg" />
+                  <h6>NGOPI</h6>
+                  <span>Ngobrol Perkara Iman</span>
+                  <p>Sabtu, 3 Agustus 2024</p>
+                  <button class="btn_pesan">Pesan Tiket Sekarang</button>
+                </div>
+                <div class="event1">
+                  <img src="asset/tim2.jpg" />
+                  <h6>SKRT Camp</h6>
+                  <span>Ngobrol Suasana Alam</span>
+                  <p></p>
+                  <button class="btn_pesan">Coming Soon</button>
+                </div>
+              </div>
+              <button class="next" onclick="slideEvent(1)">&#10095;</button>
             </div>
+            <button class="btn_all_events" onclick="showAllEvents()">Tampilkan Semua Event</button>
           </div>
         </section>
         <section class="abuabu" id="support">
@@ -137,32 +210,6 @@
             </div>
           </div>
         </section>
-        <section id="events">
-          <div class="layar-dalam">
-            <h3>Daftar Event</h3>
-            <p class="ringkasan">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              laborum!
-            </p>
-            <div class="event">
-              <div class="event1">
-                <img src="asset/tim1.jpg" />
-                <h6>NGOPI</h6>
-                <span>Ngobrol Perkara Iman</span>
-                <p>Sabtu, 3 Agustus 2024</p>
-                <button class="btn_pesan">Pesan Tiket Sekarang</button>
-              </div>
-              <div class="event1">
-                <img src="asset/tim2.jpg" />
-                <h6>SKRT Camp</h6>
-                <span>Ngobrol Suasana Alam</span>
-                <p> </p>
-                <button class="btn_pesan">Coming Soon</button>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         <section class="abuabu" id="blog">
           <div class="layar-dalam">
             <h3>Lastest Blog</h3>
@@ -202,6 +249,7 @@
                 </div>
               </div>
             </div>
+            <button class="btn_transaksi" onclick="openTransaksi()">Transaksi</button>
           </div>
         </section>
       </main>
@@ -238,6 +286,24 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="javascript.js"></script>
+    <script>
+      let currentSlide = 0;
+      function slideEvent(n) {
+        const eventContainer = document.querySelector('.event-container');
+        const events = document.querySelectorAll('.event1');
+        currentSlide += n;
+        if (currentSlide >= events.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = events.length - 1;
+        eventContainer.style.transform = `translateX(-${currentSlide * 320}px)`;
+      }
+      function showAllEvents() {
+        alert("Displaying all events...");
+        // Implement the logic to show all events
+      }
+      function openTransaksi() {
+        window.location.href = "transaksi.html";
+      }
+    </script>
   </body>
 </html>
+
