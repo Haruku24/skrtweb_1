@@ -149,6 +149,7 @@ section h3::after {
 }
 #aboutus,
 #team,
+#events,
 #blog {
   text-align: center;
 }
@@ -182,6 +183,28 @@ section.abuabu {
   flex-direction: row;
   justify-content: space-around;
 }
+.event{
+  background-color: #ababab;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.event1{
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+}
+.btn_pesan{
+  width: 100%;
+  padding: 5px;
+  margin-top: 8px;
+  background-color: teal;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+}
+
 .support h6,
 .tim h6 {
   margin: 0px;
@@ -190,11 +213,27 @@ section.abuabu {
   font-size: 18px;
   font-weight: bold;
 }
+.event h6 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.event p {
+  margin: 0px;
+  margin-top: 16px;
+  padding: 0px;
+  font-size: 16px;
+}
 .support img {
   width: 50px;
 }
 .support div,
 .tim div {
+  text-align: center;
+  width: 26%;
+}
+.event div {
   text-align: center;
   width: 26%;
 }
@@ -233,6 +272,11 @@ section.quote .layar-dalam p {
   padding: 40px;
 }
 .tim img {
+  width: 100%;
+  box-shadow: 0px -10px 30px #ccc;
+  border-radius: 5px;
+}
+.event img {
   width: 100%;
   box-shadow: 0px -10px 30px #ccc;
   border-radius: 5px;
@@ -335,4 +379,8 @@ footer .layar-dalam .copyright {
     width: 100%;
     padding-bottom: 30px;
   }
+
+
+
+
 }
