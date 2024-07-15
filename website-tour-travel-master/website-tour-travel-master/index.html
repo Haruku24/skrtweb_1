@@ -1,369 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      .event-slider {
-        position: relative;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-      }
-      .event-slider button {
-        background-color: red;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
-        transition: transform 0.2s;
-        border-radius: 50%;
-      }
-      .event-slider button:hover {
-        transform: translateY(-50%) scale(1.1);
-      }
-      .event-slider button:active {
-        transform: translateY(-50%) scale(0.9);
-      }
-      .event-slider .prev {
-        left: 10px;
-      }
-      .event-slider .next {
-        right: 10px;
-      }
-      .event-container {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%;
-      }
-      .event1 {
-        display: flex;
-        flex-direction: row;
-        box-shadow: 0px -10px 30px #ccc;
-        border-radius: 5px;
-        margin: 0 10px;
-        background: #f9f9f9;
-        overflow: hidden;
-      }
-      .event1 img {
-        width: 50%;
-        object-fit: cover;
-      }
-      .event1 .text {
-        width: 50%;
-        padding: 20px;
-      }
-      .event1 .text h6 {
-        font-size: 18px;
-        font-weight: bold;
-        margin: 0;
-        padding-bottom: 10px;
-      }
-      .event1 .text span {
-        font-size: 16px;
-        color: #666;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .event1 .text p {
-        font-size: 16px;
-        color: #666;
-        margin: 0 0 10px 0;
-      }
-      .btn_pesan {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        background-color: teal;
-        color: #fff;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-      }
+        /* Styles for the navigation bar */
+        .navbar-hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar-visible {
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Styles for header text overlay */
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .event-slider {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            width: calc(100% - 60px); /* Adjust width to account for buttons */
+            margin: 0 auto; /* Center the event-slider */
+        }
+        .event-slider .event-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .event1 {
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0px -10px 30px #ccc;
+            border-radius: 5px;
+            margin: 0 10px;
+            background: #f9f9f9;
+            overflow: hidden;
+            width: calc(25% - 20px); /* Adjust width for 4 items per view with margin */
+        }
+        .event1 img {
+            width: 40%;
+            object-fit: cover;
+        }
+        .event1 .text {
+            padding: 20px;
+            width: 60%;
+        }
+        .event1 .text h6 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        .event1 .text span {
+            font-size: 16px;
+            color: #666;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .event1 .text p {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 10px 0;
+        }
+        .btn_pesan {
+            display: none; /* Hide the button */
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            background-color: teal;
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Styles for the navigation buttons */
+        .event-slider-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+        }
+        .event-slider-wrapper button {
+            background-color: red;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1;
+            transition: transform 0.2s;
+            border-radius: 50%; /* Make buttons circular */
+            width: 40px; /* Set the width */
+            height: 40px; /* Set the height to make it 1:1 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .event-slider-wrapper button:hover {
+            transform: scale(1.1);
+        }
+        .event-slider-wrapper button:active {
+            transform: scale(0.9);
+        }
     </style>
-  </head>
-  <body>
-    <nav>
-      <div class="layar-dalam">
-        <div class="logo">
-          <a href=""><img src="asset/logo-white.png" class="putih" /></a>
-          <a href=""><img src="asset/logo-black.png" class="hitam" /></a>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="layar-dalam">
+            <div class="logo">
+                <a href=""><img src="asset/logo-white.png" class="putih" /></a>
+                <a href=""><img src="asset/logo-black.png" class="hitam" /></a>
+            </div>
+            <div class="menu">
+                <a href="#" class="tombol-menu">
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                </a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="menu">
-          <a href="#" class="tombol-menu">
-            <span class="garis"></span>
-            <span class="garis"></span>
-            <span class="garis"></span>
-          </a>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#support">Support</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
     </nav>
     <div class="layar-penuh">
-      <header id="home">
-        <div class="overlay"></div>
-        <img src="asset/background-bromo.jpg" alt="Header Image" />
-        <div class="intro">
-          <h3>Visit Indonesia</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-            officiis?
-          </p>
-          <p>
-            <a href="" class="tombol">MORE INFO</a>
-          </p>
-        </div>
-      </header>
-      <main>
-        <section id="events">
-          <div class="layar-dalam">
-            <h3>Daftar Event</h3>
-            <p class="ringkasan">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              laborum!
-            </p>
-            <div class="event-slider">
-              <button class="prev" onclick="slideEvent(-1)">&#10094;</button>
-              <div class="event-container">
-                <div class="event1">
-                  <img src="asset/tim1.jpg" />
-                  <div class="text">
-                    <h6>NGOPI</h6>
-                    <span>Ngobrol Perkara Iman</span>
-                    <p>Sabtu, 3 Agustus 2024</p>
-                    <button class="btn_pesan">Pesan Tiket Sekarang</button>
-                  </div>
+        <header id="home">
+            <div class="overlay"></div>
+            <img src="asset/background-bromo.jpg" alt="Header Image" />
+            <div class="intro">
+                <h3>Visit Indonesia</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, officiis?</p>
+                <p><a href="" class="tombol">MORE INFO</a></p>
+            </div>
+            <div class="header-text">Skrtmedia.id</div>
+        </header>
+        <main>
+            <section id="events">
+                <div class="layar-dalam">
+                    <h3>Daftar Event</h3>
+                    <p class="ringkasan">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laborum!
+                    </p>
+                    <div class="event-slider-wrapper">
+                        <button class="prev" onclick="slideEvent(-1)">&#10094;</button>
+                        <div class="event-slider">
+                            <div class="event-container">
+                                <div class="event1">
+                                    <img src="asset/tim1.jpg" />
+                                    <div class="text">
+                                        <h6>NGOPI</h6>
+                                        <span>Ngobrol Perkara Iman</span>
+                                        <p>Sabtu, 3 Agustus 2024</p>
+                                    </div>
+                                </div>
+                                <div class="event1">
+                                    <img src="asset/tim2.jpg" />
+                                    <div class="text">
+                                        <h6>SKRT Camp</h6>
+                                        <span>Ngobrol Suasana Alam</span>
+                                        <p>Sabtu, 10 Agustus 2024</p>
+                                    </div>
+                                </div>
+                                <div class="event1">
+                                    <img src="asset/tim3.jpg" />
+                                    <div class="text">
+                                        <h6>Hiking</h6>
+                                        <span>Explore the Mountains</span>
+                                        <p>Minggu, 17 Agustus 2024</p>
+                                    </div>
+                                </div>
+                                <div class="event1">
+                                    <img src="asset/tim4.jpg" />
+                                    <div class="text">
+                                        <h6>Beach Cleanup</h6>
+                                        <span>Save Our Oceans</span>
+                                        <p>Sabtu, 24 Agustus 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="next" onclick="slideEvent(1)">&#10095;</button>
+                    </div>
+                    <button class="btn_all_events" onclick="showAllEvents()">Tampilkan Semua Event</button>
                 </div>
-                <div class="event1">
-                  <img src="asset/tim2.jpg" />
-                  <div class="text">
-                    <h6>SKRT Camp</h6>
-                    <span>Ngobrol Suasana Alam</span>
-                    <p></p>
-                    <button class="btn_pesan">Coming Soon</button>
-                  </div>
+            </section>
+            <section class="abuabu" id="support">
+                <div class="layar-dalam support">
+                    <div>
+                        <img src="asset/matahari.png" />
+                        <h6>In Every Condition</h6>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa illum recusandae nostrum. Obcaecati, quos vel.</p>
+                    </div>
+                    <div>
+                        <img src="asset/tas.png" />
+                        <h6>Professional Team</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ea voluptatem corporis molestias obcaecati deleniti.</p>
+                    </div>
+                    <div>
+                        <img src="asset/kompas.png" />
+                        <h6>Expert Hikers</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ea voluptatem corporis molestias obcaecati deleniti.</p>
+                    </div>
                 </div>
-              </div>
-              <button class="next" onclick="slideEvent(1)">&#10095;</button>
-            </div>
-            <button class="btn_all_events" onclick="showAllEvents()">Tampilkan Semua Event</button>
-          </div>
-        </section>
-        <section class="abuabu" id="support">
-          <div class="layar-dalam support">
-            <div>
-              <img src="asset/matahari.png" />
-              <h6>In Every Condition</h6>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                illum recusandae nostrum. Obcaecati, quos vel.
-              </p>
-            </div>
-            <div>
-              <img src="asset/tas.png" />
-              <h6>Professional Team</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Exercitationem, ea voluptatem corporis molestias obcaecati
-                deleniti.
-              </p>
-            </div>
-            <div>
-              <img src="asset/kompas.png" />
-              <h6>Expert Hikers</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Exercitationem, ea voluptatem corporis molestias obcaecati
-                deleniti.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section id="gallery">
-          <div><img src="asset/foto1.jpg" /></div>
-          <div><img src="asset/foto2.jpg" /></div>
-          <div><img src="asset/foto3.jpg" /></div>
-          <div><img src="asset/foto4.jpg" /></div>
-          <div><img src="asset/foto5.jpg" /></div>
-          <div><img src="asset/foto6.jpg" /></div>
-          <div><img src="asset/foto7.jpg" /></div>
-          <div><img src="asset/foto8.jpg" /></div>
-        </section>
-        <section class="quote">
-          <div class="layar-dalam">
-            <p>Jogja terbuat dari rindu, pulang dan angkringan.</p>
-          </div>
-        </section>
-        <section id="team">
-          <div class="layar-dalam">
-            <h3>Our Team</h3>
-            <p class="ringkasan">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              laborum!
-            </p>
-            <div class="tim">
-              <div>
-                <img src="asset/tim1.jpg" />
-                <h6>John Doe</h6>
-                <span>Indonesia</span>
-              </div>
-              <div>
-                <img src="asset/tim2.jpg" />
-                <h6>John Brown</h6>
-                <span>France</span>
-              </div>
-              <div>
-                <img src="asset/tim3.jpg" />
-                <h6>Michaell</h6>
-                <span>Spain</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="abuabu" id="blog">
-          <div class="layar-dalam">
-            <h3>Lastest Blog</h3>
-            <p class="ringkasan">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-              fugit.
-            </p>
-            <div class="blog">
-              <div class="area">
-                <div
-                  class="gambar"
-                  style="background-image: url('asset/foto1.jpg')"
-                ></div>
-                <div class="text">
-                  <h6>MOUNTAIN</h6>
-                  <span>December 28, 2018 | 3 comments</span>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Autem ea numquam deserunt veniam odio in!
-                  </p>
-                  <a href="" class="tbl-biru">READ MORE</a>
+            </section>
+            <section id="gallery">
+                <div><img src="asset/foto1.jpg" /></div>
+                <div><img src="asset/foto2.jpg" /></div>
+                <div><img src="asset/foto3.jpg" /></div>
+                <div><img src="asset/foto4.jpg" /></div>
+            </section>
+            <section id="team">
+                <div class="layar-dalam">
+                    <h3>Our Team</h3>
+                    <p class="ringkasan">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laborum!
+                    </p>
+                    <div class="tim">
+                        <div>
+                            <img src="asset/tim1.jpg" />
+                            <h6>John Doe</h6>
+                            <span>Indonesia</span>
+                        </div>
+                        <div>
+                            <img src="asset/tim2.jpg" />
+                            <h6>John Brown</h6>
+                            <span>England</span>
+                        </div>
+                        <div>
+                            <img src="asset/tim3.jpg" />
+                            <h6>John Smith</h6>
+                            <span>Germany</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="area">
-                <div
-                  class="gambar"
-                  style="background-image: url('asset/foto3.jpg')"
-                ></div>
-                <div class="text">
-                  <h6>THE JOURNEY BEGINS</h6>
-                  <span>December 28, 2018 | 3 comments</span>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Autem ea numquam deserunt veniam odio in!
-                  </p>
-                  <a href="" class="tbl-biru">READ MORE</a>
+            </section>
+            <section id="blog">
+                <div class="layar-dalam">
+                    <h3>Blog</h3>
+                    <p class="ringkasan">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laborum!
+                    </p>
+                    <div class="blog">
+                        <div class="area">
+                            <div class="gambar" style="background-image: url('asset/foto1.jpg')"></div>
+                            <div class="text">
+                                <h6>MOUNTAIN</h6>
+                                <span>December 28, 2018 | 3 comments</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ea numquam deserunt veniam odio in!</p>
+                                <a href="" class="tbl-biru">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar" style="background-image: url('asset/foto3.jpg')"></div>
+                            <div class="text">
+                                <h6>THE JOURNEY BEGINS</h6>
+                                <span>December 28, 2018 | 3 comments</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ea numquam deserunt veniam odio in!</p>
+                                <a href="" class="tbl-biru">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar" style="background-image: url('asset/foto4.jpg')"></div>
+                            <div class="text">
+                                <h6>WATER FALLS</h6>
+                                <span>December 28, 2018 | 3 comments</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ea numquam deserunt veniam odio in!</p>
+                                <a href="" class="tbl-biru">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar" style="background-image: url('asset/foto2.jpg')"></div>
+                            <div class="text">
+                                <h6>EXPERIENCE</h6>
+                                <span>December 28, 2018 | 3 comments</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ea numquam deserunt veniam odio in!</p>
+                                <a href="" class="tbl-biru">READ MORE</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="area">
-                <div
-                  class="gambar"
-                  style="background-image: url('asset/foto4.jpg')"
-                ></div>
-                <div class="text">
-                  <h6>WATER FALLS</h6>
-                  <span>December 28, 2018 | 3 comments</span>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Autem ea numquam deserunt veniam odio in!
-                  </p>
-                  <a href="" class="tbl-biru">READ MORE</a>
+            </section>
+            <section id="contact">
+                <div class="layar-dalam">
+                    <h3>Get In Touch</h3>
+                    <p class="ringkasan">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, fugit.
+                    </p>
+                    <div class="kontak">
+                        <div>
+                            <img src="asset/mail.png" />
+                            <h6>Our Email</h6>
+                            <span>info@bromo.com</span>
+                        </div>
+                        <div>
+                            <img src="asset/phone.png" />
+                            <h6>Phone</h6>
+                            <span>(+62)88889999</span>
+                        </div>
+                        <div>
+                            <img src="asset/loc.png" />
+                            <h6>Office</h6>
+                            <span>Malang, Indonesia</span>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" class="form-isi" />
+                            <input type="email" placeholder="Email Address" class="form-isi" />
+                            <textarea placeholder="Your Message"></textarea>
+                            <input type="submit" class="tbl-biru" value="SEND MESSAGE" />
+                        </div>
+                    </form>
                 </div>
-              </div>
-              <div class="area">
-                <div
-                  class="gambar"
-                  style="background-image: url('asset/foto2.jpg')"
-                ></div>
-                <div class="text">
-                  <h6>EXPERIENCE</h6>
-                  <span>December 28, 2018 | 3 comments</span>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Autem ea numquam deserunt veniam odio in!
-                  </p>
-                  <a href="" class="tbl-biru">READ MORE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="contact">
-          <div class="layar-dalam">
-            <h3>Get In Touch</h3>
-            <p class="ringkasan">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-              fugit.
-            </p>
-            <div class="kontak">
-              <div>
-                <img src="asset/mail.png" />
-                <h6>Our Email</h6>
-                <span>info@bromo.com</span>
-              </div>
-              <div>
-                <img src="asset/phone.png" />
-                <h6>Phone</h6>
-                <span>(+62)88889999</span>
-              </div>
-              <div>
-                <img src="asset/loc.png" />
-                <h6>Office</h6>
-                <span>Malang, Indonesia</span>
-              </div>
-            </div>
-            <form>
-              <div class="form-group">
-                <input type="text" placeholder="Full Name" class="form-isi" />
-                <input type="email" placeholder="Email Address" class="form-isi" />
-                <textarea placeholder="Your Message"></textarea>
-                <input type="submit" class="tbl-biru" value="SEND MESSAGE" />
-              </div>
-            </form>
-          </div>
-        </section>
-      </main>
+            </section>
+        </main>
     </div>
     <footer>
-      <div class="layar-dalam">
-        <div class="copyright">&copy; 2018. All Right Reserved</div>
-      </div>
+        <div class="layar-dalam">
+            <div class="copyright">&copy; 2018. All Right Reserved</div>
+        </div>
     </footer>
     <script>
-      let currentIndex = 0;
-      function slideEvent(direction) {
-        const container = document.querySelector(".event-container");
-        const events = document.querySelectorAll(".event1");
-        const totalEvents = events.length;
-        const eventWidth = events[0].clientWidth + 20; // +20 for margin
-        currentIndex += direction;
-        if (currentIndex < 0) {
-          currentIndex = totalEvents - 1;
-        } else if (currentIndex >= totalEvents) {
-          currentIndex = 0;
+        let currentIndex = 0;
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        function slideEvent(direction) {
+            const container = document.querySelector(".event-container");
+            const events = document.querySelectorAll(".event1");
+            const totalEvents = events.length;
+            const eventWidth = events[0].clientWidth + 20; // +20 for margin
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = totalEvents - 1;
+            } else if (currentIndex >= totalEvents) {
+                currentIndex = 0;
+            }
+            container.style.transform = 'translateX(-' + (currentIndex * eventWidth) + 'px)';
         }
-        container.style.transform = 'translateX(-' + (currentIndex * eventWidth) + 'px)';
-      }
-      function showAllEvents() {
-        // Add functionality for showing all events if needed
-      }
+
+        function showAllEvents() {
+            // Add functionality for showing all events if needed
+        }
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Downscroll
+                navbar.classList.add('navbar-hidden');
+                navbar.classList.remove('navbar-visible');
+            } else {
+                // Upscroll
+                navbar.classList.add('navbar-visible');
+                navbar.classList.remove('navbar-hidden');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
     </script>
-  </body>
+</body>
 </html>
