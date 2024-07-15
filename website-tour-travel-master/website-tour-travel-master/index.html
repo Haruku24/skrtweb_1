@@ -14,7 +14,7 @@
         overflow: hidden;
       }
       .event-slider button {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: red;
         border: none;
         cursor: pointer;
         padding: 10px;
@@ -22,6 +22,14 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
+        transition: transform 0.2s;
+        border-radius: 50%;
+      }
+      .event-slider button:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+      .event-slider button:active {
+        transform: translateY(-50%) scale(0.9);
       }
       .event-slider .prev {
         left: 10px;
@@ -35,36 +43,48 @@
         width: 100%;
       }
       .event1 {
-        min-width: 300px;
-        flex: 0 0 auto;
-        box-sizing: border-box;
-        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px -10px 30px #ccc;
+        border-radius: 5px;
         margin: 0 10px;
         background: #f9f9f9;
-        border: 1px solid #ddd;
+        overflow: hidden;
       }
-      .btn_all_events, .btn_transaksi {
-        background-color: red;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        transition: transform 0.2s;
-        margin-top: 20px;
+      .event1 img {
+        width: 50%;
+        object-fit: cover;
       }
-      .btn_all_events:hover, .btn_transaksi:hover {
-        transform: scale(1.1);
+      .event1 .text {
+        width: 50%;
+        padding: 20px;
       }
-      .btn_all_events:active, .btn_transaksi:active {
-        transform: scale(0.9);
+      .event1 .text h6 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+        padding-bottom: 10px;
+      }
+      .event1 .text span {
+        font-size: 16px;
+        color: #666;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .event1 .text p {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 10px 0;
       }
       .btn_pesan {
-        background-color: red;
-        color: white;
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        background-color: teal;
+        color: #fff;
+        border-radius: 8px;
         border: none;
-        padding: 10px 20px;
         cursor: pointer;
-        margin-top: 10px;
       }
     </style>
   </head>
@@ -121,17 +141,21 @@
               <div class="event-container">
                 <div class="event1">
                   <img src="asset/tim1.jpg" />
-                  <h6>NGOPI</h6>
-                  <span>Ngobrol Perkara Iman</span>
-                  <p>Sabtu, 3 Agustus 2024</p>
-                  <button class="btn_pesan">Pesan Tiket Sekarang</button>
+                  <div class="text">
+                    <h6>NGOPI</h6>
+                    <span>Ngobrol Perkara Iman</span>
+                    <p>Sabtu, 3 Agustus 2024</p>
+                    <button class="btn_pesan">Pesan Tiket Sekarang</button>
+                  </div>
                 </div>
                 <div class="event1">
                   <img src="asset/tim2.jpg" />
-                  <h6>SKRT Camp</h6>
-                  <span>Ngobrol Suasana Alam</span>
-                  <p></p>
-                  <button class="btn_pesan">Coming Soon</button>
+                  <div class="text">
+                    <h6>SKRT Camp</h6>
+                    <span>Ngobrol Suasana Alam</span>
+                    <p></p>
+                    <button class="btn_pesan">Coming Soon</button>
+                  </div>
                 </div>
               </div>
               <button class="next" onclick="slideEvent(1)">&#10095;</button>
@@ -221,87 +245,124 @@
               <div class="area">
                 <div
                   class="gambar"
-                  style="background-image: url('asset/blog1.jpg')"
+                  style="background-image: url('asset/foto1.jpg')"
                 ></div>
                 <div class="text">
-                  <article>
-                    <h4><a href="#">What About Bromo?</a></h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Placeat, est omnis? Quas reprehenderit rem nesciunt.
-                    </p>
-                  </article>
+                  <h6>MOUNTAIN</h6>
+                  <span>December 28, 2018 | 3 comments</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem ea numquam deserunt veniam odio in!
+                  </p>
+                  <a href="" class="tbl-biru">READ MORE</a>
                 </div>
               </div>
               <div class="area">
                 <div
                   class="gambar"
-                  style="background-image: url('asset/blog2.jpg')"
+                  style="background-image: url('asset/foto3.jpg')"
                 ></div>
                 <div class="text">
-                  <article>
-                    <h4><a href="#">What About Yogyakarta?</a></h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Placeat, est omnis? Quas reprehenderit rem nesciunt.
-                    </p>
-                  </article>
+                  <h6>THE JOURNEY BEGINS</h6>
+                  <span>December 28, 2018 | 3 comments</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem ea numquam deserunt veniam odio in!
+                  </p>
+                  <a href="" class="tbl-biru">READ MORE</a>
+                </div>
+              </div>
+              <div class="area">
+                <div
+                  class="gambar"
+                  style="background-image: url('asset/foto4.jpg')"
+                ></div>
+                <div class="text">
+                  <h6>WATER FALLS</h6>
+                  <span>December 28, 2018 | 3 comments</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem ea numquam deserunt veniam odio in!
+                  </p>
+                  <a href="" class="tbl-biru">READ MORE</a>
+                </div>
+              </div>
+              <div class="area">
+                <div
+                  class="gambar"
+                  style="background-image: url('asset/foto2.jpg')"
+                ></div>
+                <div class="text">
+                  <h6>EXPERIENCE</h6>
+                  <span>December 28, 2018 | 3 comments</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem ea numquam deserunt veniam odio in!
+                  </p>
+                  <a href="" class="tbl-biru">READ MORE</a>
                 </div>
               </div>
             </div>
-            <button class="btn_transaksi" onclick="openTransaksi()">Transaksi</button>
+          </div>
+        </section>
+        <section id="contact">
+          <div class="layar-dalam">
+            <h3>Get In Touch</h3>
+            <p class="ringkasan">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+              fugit.
+            </p>
+            <div class="kontak">
+              <div>
+                <img src="asset/mail.png" />
+                <h6>Our Email</h6>
+                <span>info@bromo.com</span>
+              </div>
+              <div>
+                <img src="asset/phone.png" />
+                <h6>Phone</h6>
+                <span>(+62)88889999</span>
+              </div>
+              <div>
+                <img src="asset/loc.png" />
+                <h6>Office</h6>
+                <span>Malang, Indonesia</span>
+              </div>
+            </div>
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Full Name" class="form-isi" />
+                <input type="email" placeholder="Email Address" class="form-isi" />
+                <textarea placeholder="Your Message"></textarea>
+                <input type="submit" class="tbl-biru" value="SEND MESSAGE" />
+              </div>
+            </form>
           </div>
         </section>
       </main>
-      <footer id="contact">
-        <div class="layar-dalam">
-          <div>
-            <h5>Info</h5>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-            sunt?
-          </div>
-          <div>
-            <h5>Contact</h5>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-            sunt?
-          </div>
-          <div>
-            <h5>Help</h5>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-            sunt?
-          </div>
-          <div>
-            <h5>Sitemap</h5>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-            sunt?
-          </div>
-        </div>
-        <div class="layar-dalam">
-          <div class="copyright">&copy; 2021 Travelling Indonesia</div>
-        </div>
-      </footer>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <footer>
+      <div class="layar-dalam">
+        <div class="copyright">&copy; 2018. All Right Reserved</div>
+      </div>
+    </footer>
     <script>
-      let currentSlide = 0;
-      function slideEvent(n) {
-        const eventContainer = document.querySelector('.event-container');
-        const events = document.querySelectorAll('.event1');
-        currentSlide += n;
-        if (currentSlide >= events.length) currentSlide = 0;
-        if (currentSlide < 0) currentSlide = events.length - 1;
-        eventContainer.style.transform = `translateX(-${currentSlide * 320}px)`;
+      let currentIndex = 0;
+      function slideEvent(direction) {
+        const container = document.querySelector(".event-container");
+        const events = document.querySelectorAll(".event1");
+        const totalEvents = events.length;
+        const eventWidth = events[0].clientWidth + 20; // +20 for margin
+        currentIndex += direction;
+        if (currentIndex < 0) {
+          currentIndex = totalEvents - 1;
+        } else if (currentIndex >= totalEvents) {
+          currentIndex = 0;
+        }
+        container.style.transform = 'translateX(-' + (currentIndex * eventWidth) + 'px)';
       }
       function showAllEvents() {
-        alert("Displaying all events...");
-        // Implement the logic to show all events
-      }
-      function openTransaksi() {
-        window.location.href = "transaksi.html";
+        // Add functionality for showing all events if needed
       }
     </script>
   </body>
