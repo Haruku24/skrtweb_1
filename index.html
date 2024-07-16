@@ -24,19 +24,17 @@
       margin: 10px;
     }
 
-    /* Styling for the new Pelaksanaan Acara section */
     .pelaksanaan-acara {
       display: flex;
       margin-top: 20px;
     }
 
-    .pelaksanaan-acara iframe {
+    #map {
       width: 50%;
       height: 300px;
-      border: 0;
     }
 
-    .pelaksanaan-acara .details {
+    .details {
       width: 50%;
       padding: 20px;
     }
@@ -147,11 +145,11 @@
         <div class="layar-dalam">
           <h3>Pelaksanaan Acara</h3>
           <div class="pelaksanaan-acara">
-            <iframe src="https://www.google.com/maps/place/RaRaHaJa/@-6.305636,107.3023447,17z/data=!3m1!4b1!4m6!3m5!1s0x2e6977629e10aa29:0x4f7ff11140887c09!8m2!3d-6.305636!4d107.3049196!16s%2Fg%2F11vcxfcjgg?entry=ttu" allowfullscreen="" loading="lazy"></iframe>
+            <div id="map"></div>
             <div class="details">
               <h6>NGOPI (Ngobrol Perkara Iman)</h6>
-              <p><span class="icon icon-date"></span> Sabtu, 3 Agustus 2024</p>
-              <p><span class="icon icon-location"></span> Lokasi: RaRaHaJa</p>
+              <p><span class="icon icon-date"></span> Tanggal: Sabtu, 3 Agustus 2024</p>
+              <p><span class="icon icon-location"></span> Lokasi: RaRaHaJa Cafe</p>
             </div>
           </div>
         </div>
@@ -202,13 +200,22 @@
           </div>
         </div>
       </section>
-      <section id="gallery">
-        <div><img src="asset/foto1.jpg" alt="Foto 1" /></div>
-        <div><img src="asset/foto2.jpg" alt="Foto 2" /></div>
-        <div><img src="asset/foto3.jpg" alt="Foto 3" /></div>
-        <div><img src="asset/foto4.jpg" alt="Foto 4" /></div>
-        <div><img src="asset/foto5.jpg" alt="Foto 5" /></div>
-      </section>
+    </section>
+    <section id="gallery">
+      <div><img src="asset/foto1.jpg" alt="Foto 1" /></div>
+      <div><img src="asset/foto2.jpg" alt="Foto 2" /></div>
+      <div><img src="asset/foto3.jpg" alt="Foto 3" /></div>
+      <div><img src="asset/foto4.jpg" alt="Foto 4" /></div>
+      <div><img src="asset/foto5.jpg" alt="Foto 5" /></div>
+      <div><img src="asset/foto6.jpg" alt="Foto 6" /></div>
+      <div><img src="asset/foto7.jpg" alt="Foto 7" /></div>
+      <div><img src="asset/foto8.jpg" alt="Foto 8" /></div>
+    </section>
+    <section class="quote">
+      <div class="layar-dalam">
+        <p>Sempat Kelam Resah Tinggalkan!</p>
+      </div>
+    </section>
       <section class="abuabu" id="tim">
         <div class="layar-dalam">
           <h3>Tim Kami</h3>
@@ -307,11 +314,19 @@
       </div>
     </footer>
   </div>
-  <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-  ></script>
-  <script src="javascript.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      var lokasi = { lat: -6.305636, lng: 107.3023447 }; // Koordinat lokasi acara
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: lokasi
+      });
+      var marker = new google.maps.Marker({
+        position: lokasi,
+        map: map
+      });
+    }
+  </script>
 </body>
 </html>
