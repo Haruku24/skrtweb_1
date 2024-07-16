@@ -7,6 +7,31 @@
   <title>SKRT!</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .navbar-scrolled {
+      background-color: white;
+      transition: background-color 0.3s;
+    }
+
+    .navbar-scrolled .menu ul li a {
+      color: black;
+    }
+
+    .navbar-scrolled .logo .putih {
+      display: none;
+    }
+
+    .navbar-scrolled .logo .hitam {
+      display: block;
+    }
+
+    .logo .putih {
+      display: block;
+    }
+
+    .logo .hitam {
+      display: none;
+    }
+
     .event-container {
       display: flex;
       align-items: center;
@@ -343,5 +368,25 @@
       </div>
     </footer>
   </div>
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('nav');
+      const logoPutih = document.querySelector('.logo .putih');
+      const logoHitam = document.querySelector('.logo .hitam');
+      const menuLinks = document.querySelectorAll('.menu ul li a');
+  
+      if (window.scrollY > 0) {
+        navbar.classList.add('navbar-scrolled');
+        logoPutih.style.display = 'none';
+        logoHitam.style.display = 'block';
+        menuLinks.forEach(link => link.style.color = 'black');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+        logoPutih.style.display = 'block';
+        logoHitam.style.display = 'none';
+        menuLinks.forEach(link => link.style.color = '');
+      }
+    });
+  </script>  
 </body>
 </html>
