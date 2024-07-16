@@ -63,7 +63,7 @@ nav .menu ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #000;
   text-align: center;
   padding: 0px 16px 0px 16px;
   text-decoration: none;
@@ -88,28 +88,50 @@ header video {
   object-fit: cover;
   z-index: -2;
 }
+
+
 header .intro {
   z-index: 100;
-  color: #fff;
-  text-align: center;
+  margin-left: 5%;
+  text-align: left;
   position: relative;
-  top: 45%;
+  top: 30%;
+  display: flex;
+}
+header .intro .img-intro{
+  width: auto;
+  height: 300px;
+  margin-right: 10%;
+  border-radius: 8px;
+}
+header .intro .text-intro{
+  min-width: 40%;
 }
 header .intro h3 {
-  font-size: 45px;
-  margin: 0;
+  font-size: 60px;
+  font-family: "Caveat Brush", cursive;
+  color: #466B4C;
+  margin-top: 48px;
+  margin-bottom: 24px;
   padding: 0;
 }
+header .intro p {
+  width: 80%;
+  color: #888888;
+}
 .tombol {
-  background-color: #c86b85;
+  background-color: #466B4C;
   height: 50px;
   line-height: 42px;
   color: #fff;
   text-decoration: none;
   display: inline-block;
+  align-content: center;
   padding: 0px 20px 0px 20px;
   font-size: 15px;
+  font-weight: bold; 
   border-radius: 4px;
+  margin-bottom: 32px;
 }
 header .overlay {
   position: absolute;
@@ -117,8 +139,7 @@ header .overlay {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #000;
-  opacity: 50%;
+  background: linear-gradient(to top left, #B4C0B3, #F6F8F8);
   z-index: -1;
 }
 .tombol-menu {
@@ -152,6 +173,7 @@ section h3::after {
 #events,
 #blog {
   text-align: center;
+  background-color: #F6F8F8;
 }
 section p.ringkasan {
   font-style: italic;
@@ -342,6 +364,19 @@ footer .layar-dalam .copyright {
   .layar-dalam {
     width: 90%;
   }
+
+  header .intro {
+    top: 10%;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .intro .img-intro{
+    order: -1;
+    margin-bottom: 32px;
+  }
+
+
   nav .menu ul {
     display: none;
     margin-top: 60px;
@@ -414,6 +449,7 @@ header h2 {
 
 main {
   padding: 20px 0;
+  background-color: #F6F8F8;
 }
 
 .payment-container {
@@ -453,5 +489,10 @@ button:hover {
 @media (max-width: 600px) {
   input, select, button {
     width: 100%;
+  }
+
+  header .intro .img-intro{
+    width: auto;
+    height: 150px;
   }
 }
