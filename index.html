@@ -26,17 +26,25 @@
 
     .pelaksanaan-acara {
       display: flex;
+      flex-wrap: wrap;
       margin-top: 20px;
+      justify-content: center;
+      text-align: center;
     }
 
-    #map {
-      width: 50%;
-      height: 300px;
+    .location-img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+      object-fit: cover;
+      margin: 0 auto;
     }
 
     .details {
-      width: 50%;
+      width: 100%;
+      max-width: 300px;
       padding: 20px;
+      box-sizing: border-box;
     }
 
     .details h6 {
@@ -63,6 +71,25 @@
     .icon-location {
       background-image: url('asset/location.png');
     }
+
+    .location-link {
+      color: blue;
+      cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+      .pelaksanaan-acara {
+        flex-wrap: nowrap;
+      }
+
+      .location-img, .details {
+        max-width: 50%;
+      }
+
+      .details {
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
@@ -70,7 +97,7 @@
     <div class="layar-dalam">
       <div class="logo">
         <a href="#"><img src="asset/skrt1.png" class="putih" alt="Logo Putih" /></a>
-        <a href="#"><img src="asset/skrt2.png" class="hitam" alt="Logo Hitam" /></a>  
+        <a href="#"><img src="asset/skrt2.png" class="hitam" alt="Logo Hitam" /></a>
       </div>
       <div class="menu">
         <a href="#" class="tombol-menu">
@@ -143,13 +170,15 @@
       </section>
       <section id="pelaksanaan-acara">
         <div class="layar-dalam">
-          <h3>Pelaksanaan Acara</h3>
+          <h3 style="text-align:center;">Pelaksanaan Acara</h3>
           <div class="pelaksanaan-acara">
-            <div id="map"></div>
+            <img src="asset/RaRaHaJa.png" alt="Lokasi Acara" class="location-img" />
             <div class="details">
               <h6>NGOPI (Ngobrol Perkara Iman)</h6>
               <p><span class="icon icon-date"></span> Tanggal: Sabtu, 3 Agustus 2024</p>
-              <p><span class="icon icon-location"></span> Lokasi: RaRaHaJa Cafe</p>
+              <p><span class="icon icon-location"></span> 
+                <a href="https://www.google.com/maps/place/RaRaHaJa/@-6.3057548,107.3025682,1094m/data=!3m1!1e3!4m6!3m5!1s0x2e6977629e10aa29:0x4f7ff11140887c09!8m2!3d-6.305636!4d107.3049196!16s%2Fg%2F11vcxfcjgg!5m1!1e4?entry=ttu" class="location-link" target="_blank"> Lokasi: RaRaHaJa Cafe</a>
+              </p>
             </div>
           </div>
         </div>
@@ -216,7 +245,7 @@
         <p>Sempat Kelam Resah Tinggalkan!</p>
       </div>
     </section>
-      <section class="abuabu" id="tim">
+      <section id="tim">
         <div class="layar-dalam">
           <h3>Tim Kami</h3>
           <p class="ringkasan">
@@ -310,23 +339,9 @@
         </div>
       </div>
       <div class="layar-dalam">
-        <div class="copyright">&copy; 2021 Travelling Indonesia</div>
+        <div class="copyright">&copy; 2024 skrtmedia.id</div>
       </div>
     </footer>
   </div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-  <script>
-    function initMap() {
-      var lokasi = { lat: -6.305636, lng: 107.3023447 }; // Koordinat lokasi acara
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: lokasi
-      });
-      var marker = new google.maps.Marker({
-        position: lokasi,
-        map: map
-      });
-    }
-  </script>
 </body>
 </html>
