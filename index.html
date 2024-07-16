@@ -13,30 +13,14 @@
         position: relative;
       }
 
-      .btn-geser {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #fff;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        font-size: 18px;
-        z-index: 10;
-      }
-
-      #geser-kiri {
-        left: -30px;
-      }
-
-      #geser-kanan {
-        right: -30px;
-      }
-
       .event {
         display: flex;
-        overflow: hidden;
+        overflow-x: scroll;
         scroll-behavior: smooth;
+      }
+
+      .event::-webkit-scrollbar {
+        display: none;
       }
 
       .event1 {
@@ -65,7 +49,7 @@
             <li><a href="#team">Tim</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Kontak</a></li>
-            <li><a href="#events">Daftar Event</a></li> <!-- Item baru di navbar -->
+            <li><a href="#events">Daftar Event</a></li>
           </ul>
         </div>
       </div>
@@ -89,7 +73,6 @@
             <h3>Daftar Event</h3>
             <p class="ringkasan">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laborum!</p>
             <div class="event-container">
-              <button class="btn-geser" id="geser-kiri" onclick="geserKiri()">&#10094;</button>
               <div class="event" id="event-scroll">
                 <div class="event1">
                   <img src="asset/tim1.jpg" alt="Gambar Event 1" />
@@ -105,8 +88,21 @@
                   <p>Segera Hadir</p>
                   <button class="btn_pesan">Segera Hadir</button>
                 </div>
+                <div class="event1">
+                  <img src="asset/tim4.jpg" alt="Gambar Event 3" />
+                  <h6>Hello Gaes</h6>
+                  <span>Fachri Husaeni</span>
+                  <p>Sabtu, 10 Agustus 2024</p>
+                  <button class="btn_pesan">Pesan Tiket</button>
+                </div>
+                <div class="event1">
+                  <img src="asset/tim5.jpg" alt="Gambar Event 4" />
+                  <h6>Peace Gaes</h6>
+                  <span>With Fachri Husaeni</span>
+                  <p>Segera Hadir</p>
+                  <button class="btn_pesan">Segera Hadir</button>
+                </div>
               </div>
-              <button class="btn-geser" id="geser-kanan" onclick="geserKanan()">&#10095;</button>
             </div>
           </div>
         </section>
@@ -274,21 +270,6 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script>
-      function geserKiri() {
-        document.getElementById('event-scroll').scrollBy({
-          left: -300,
-          behavior: 'smooth'
-        });
-      }
-
-      function geserKanan() {
-        document.getElementById('event-scroll').scrollBy({
-          left: 300,
-          behavior: 'smooth'
-        });
-      }
-    </script>
     <script src="javascript.js"></script>
   </body>
 </html>
