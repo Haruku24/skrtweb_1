@@ -15,9 +15,6 @@
       transition: background-color 0.3s;
     }
 
-    .navbar-scrolled .menu ul li a {
-      color: black;
-    }
 
     .navbar-scrolled .logo .putih {
       display: none;
@@ -75,6 +72,13 @@
       box-sizing: border-box;
     }
 
+    .details .date, .details .location, .details .price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+  }
+
     .details h6 {
       font-size: 24px;
       margin-bottom: 10px;
@@ -85,11 +89,10 @@
     }
 
     .details .icon {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-size: cover;
-      margin-right: 10px;
+      margin-top: 16px;
+      width: 40px;
+      height: 40px;
+      font-size: 32px;
     }
 
     .icon-date {
@@ -135,11 +138,10 @@
         </a>
         <ul>
           <li><a href="#home">Beranda</a></li>
-          <li><a href="#aboutus">Event</a></li>
-          <li><a href="#location">Lokasi</a></li>
-          <li><a href="#pelaksanaan-acara">Acara</a></li>
+          <li><a href="#tentang-event">Tentang Event</a></li>
+          <li><a href="#pelaksanaan-acara">Pelaksanaan Acara</a></li>
           <li><a href="#events">Daftar Event</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li><a class="tombol" href="#contact">Kontak</a></li>
         </ul>
       </div>
     </div>
@@ -169,6 +171,44 @@
       </div>
     </header>
     <main>
+      <section id="tentang-event">
+        <div class="layar-dalam">
+          <h3>Ngobrol Perkara Iman</h3>
+          <p>Berhenti sejenak dari hiruk-pikuk dunia, menikmati secangkir kopi, dan merenungkan perkara-perkara iman yang sering kali terlupakan</p>
+          <div class="ringkasan-event" style="display: flex;">
+            <img src="/asset/blog1.jpg" height="300px" width="auto">
+            <div class="ringkasan-text">
+              <h2>Iman bukan hanya sekedar teori belaka.</h2>
+              <p>Dalam suasana kafe yang hangat dan ramah, peserta diajak untuk menyelami lautan keimanan melalui diskusi yang interaktif dan penuh keakraban. Di sini, iman bukan hanya sekadar teori, tetapi sebuah pengalaman yang nyata dan relevan dalam kehidupan sehari-hari.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="pelaksanaan-acara">
+        <div class="layar-dalam">
+          <h3 style="text-align:center;">Pelaksanaan Acara</h3>
+          <div class="pelaksanaan-acara">
+            <img src="asset/RaRaHaJa.png" alt="Lokasi Acara" class="location-img" />
+            <div class="details">
+              
+              <h6>NGOPI (Ngobrol Perkara Iman)</h6>
+              <div class="date">
+                <span class="icon">📅</span>
+                <p>Sabtu, 3 Agustus 2024<br>Ba'da Isya - selesai</p>
+            </div>
+            <div class="location">
+                <span class="icon">📍</span>
+                <p>Kedai Rarahaja<br>Jl. Panatayuda II, Nagasari, Karawang Barat</p>
+            </div>
+            <div class="price">
+                <span class="icon">💲</span>
+                <p>HTM: Rp. 50.000,-<br>Sudah termasuk benefit yang didapat</p>
+            </div>
+              <button class="tombol">Daftar Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="events">
         <div class="layar-dalam">
           <h3>Daftar Event</h3>
@@ -176,14 +216,14 @@
           <div class="event-container">
             <div class="event" id="event-scroll">
               <div class="event1">
-                <img src="asset/tim1.jpg" alt="Gambar Event 1" />
+                <img src="asset/poster-ngopi.png" alt="Gambar Event 1" />
                 <h6>NGOPI</h6>
                 <span>Ngobrol Perkara Iman</span>
                 <p>Sabtu, 3 Agustus 2024</p>
                 <button class="btn_pesan" onclick="window.location.href='pembayaran.html';">Pesan Tiket</button>
               </div>
               <div class="event1">
-                <img src="asset/tim2.jpg" alt="Gambar Event 2" />
+                <img src="asset/poster-ngopi.png" alt="Gambar Event 2" />
                 <h6>SKRT Camp</h6>
                 <span>Ngobrol Suasana Alam</span>
                 <p>Segera Hadir</p>
@@ -207,21 +247,7 @@
           </div>
         </div>
       </section>
-      <section id="pelaksanaan-acara">
-        <div class="layar-dalam">
-          <h3 style="text-align:center;">Pelaksanaan Acara</h3>
-          <div class="pelaksanaan-acara">
-            <img src="asset/RaRaHaJa.png" alt="Lokasi Acara" class="location-img" />
-            <div class="details">
-              <h6>NGOPI (Ngobrol Perkara Iman)</h6>
-              <p><span class="icon icon-date"></span> Tanggal: Sabtu, 3 Agustus 2024</p>
-              <p><span class="icon icon-location"></span> 
-                <a href="https://www.google.com/maps/place/RaRaHaJa/@-6.3057548,107.3025682,1094m/data=!3m1!1e3!4m6!3m5!1s0x2e6977629e10aa29:0x4f7ff11140887c09!8m2!3d-6.305636!4d107.3049196!16s%2Fg%2F11vcxfcjgg!5m1!1e4?entry=ttu" class="location-link" target="_blank"> Lokasi: RaRaHaJa Cafe</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section id="aboutus">
         <div class="layar-dalam">
           <h3>Tentang Kami</h3>
@@ -393,7 +419,7 @@
         navbar.classList.add('navbar-scrolled');
         logoPutih.style.display = 'none';
         logoHitam.style.display = 'block';
-        menuLinks.forEach(link => link.style.color = 'black');
+        menuLinks.forEach(link => link.style.color = '');
       } else {
         navbar.classList.remove('navbar-scrolled');
         logoPutih.style.display = 'block';

@@ -78,8 +78,6 @@ header {
   position: relative;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
-  z-index: 2;
 }
 header video {
   position: absolute;
@@ -95,7 +93,7 @@ header .intro {
   margin-left: 5%;
   text-align: left;
   position: relative;
-  top: 30%;
+  top: 20%;
   display: flex;
 }
 header .intro .img-intro{
@@ -170,10 +168,19 @@ section h3::after {
 }
 #aboutus,
 #team,
-#events,
-#blog {
+#tentang-event,
+#events{
   text-align: center;
   background-color: #F6F8F8;
+}
+
+.ringkasan-text{
+  text-align: start;
+  align-self: baseline;
+  margin: 32px;
+}
+.ringkasan-text h2{
+  font-size: 24px;
 }
 section p.ringkasan {
   font-style: italic;
