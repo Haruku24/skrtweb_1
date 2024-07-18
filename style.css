@@ -3,22 +3,28 @@
   line-height: 20px;
   font-size: 15px;
 }
+
 html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
+
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
 }
+
 .layar-dalam {
   width: 1000px;
   margin: auto;
 }
+
 .layar-penuh {
   width: 100%;
 }
+
 nav {
   z-index: 100;
   color: #fff;
@@ -29,15 +35,18 @@ nav {
   width: 100%;
   transition: background-color 0.5s ease;
 }
+
 nav.putih {
   background-color: #fff;
 }
+
 nav .logo {
   float: left;
   position: relative;
   line-height: 55px;
   text-align: center;
 }
+
 nav .logo img {
   vertical-align: middle;
   width: 120px;
@@ -65,7 +74,7 @@ nav .menu ul li {
 nav ul li a {
   color: #000;
   text-align: center;
-  padding: 0px 16px 0px 16px;
+  padding: 0 16px;
   text-decoration: none;
 }
 
@@ -73,12 +82,13 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* pengaturan header */
 header {
   position: relative;
   height: 100vh;
   width: 100%;
+  text-align: center;
 }
+
 header video {
   position: absolute;
   top: 0;
@@ -86,7 +96,6 @@ header video {
   object-fit: cover;
   z-index: -2;
 }
-
 
 header .intro {
   z-index: 100;
@@ -96,15 +105,18 @@ header .intro {
   top: 20%;
   display: flex;
 }
-header .intro .img-intro{
+
+header .intro .img-intro {
   width: auto;
   height: 300px;
   margin-right: 10%;
   border-radius: 8px;
 }
-header .intro .text-intro{
+
+header .intro .text-intro {
   min-width: 40%;
 }
+
 header .intro h3 {
   font-size: 60px;
   font-family: "Caveat Brush", cursive;
@@ -113,10 +125,12 @@ header .intro h3 {
   margin-bottom: 24px;
   padding: 0;
 }
+
 header .intro p {
   width: 80%;
   color: #888888;
 }
+
 .tombol {
   background-color: #466B4C;
   height: 50px;
@@ -125,12 +139,13 @@ header .intro p {
   text-decoration: none;
   display: inline-block;
   align-content: center;
-  padding: 0px 20px 0px 20px;
+  padding: 0 20px;
   font-size: 15px;
-  font-weight: bold; 
+  font-weight: bold;
   border-radius: 4px;
   margin-bottom: 32px;
 }
+
 header .overlay {
   position: absolute;
   top: 0;
@@ -140,6 +155,7 @@ header .overlay {
   background: linear-gradient(to top left, #B4C0B3, #F6F8F8);
   z-index: -1;
 }
+
 .tombol-menu {
   position: absolute;
   top: 1.7rem;
@@ -149,16 +165,20 @@ header .overlay {
   width: 30px;
   height: 20px;
 }
+
 .tombol-menu .garis {
   height: 3px;
   background-color: #fff;
 }
+
 section {
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0;
 }
+
 section h3 {
   font-size: 30px;
 }
+
 section h3::after {
   content: "";
   border-bottom: 5px solid #c86b85;
@@ -166,45 +186,51 @@ section h3::after {
   display: block;
   margin: 20px auto;
 }
+
 #aboutus,
 #team,
 #tentang-event,
-#events{
+#events {
   text-align: center;
   background-color: #F6F8F8;
 }
 
-.ringkasan-text{
+.ringkasan-text {
   text-align: start;
   align-self: baseline;
   margin: 32px;
 }
-.ringkasan-text h2{
+
+.ringkasan-text h2 {
   font-size: 24px;
 }
+
 section p.ringkasan {
   font-style: italic;
   font-size: 18px;
   color: #ababab;
 }
+
 section .konten-isi p {
   font-style: normal;
 }
-nav.putih {
-  background-color: #fff;
-}
+
 nav.putih .tombol-menu .garis {
   background-color: #333;
 }
+
 nav.putih ul li a {
   color: #333;
 }
+
 nav .logo img.hitam {
   display: none;
 }
+
 section.abuabu {
   background-color: #f5f6f6;
 }
+
 .support,
 .tim,
 .blog {
@@ -212,19 +238,22 @@ section.abuabu {
   flex-direction: row;
   justify-content: space-around;
 }
-.event{
+
+.event {
   background-color: #ababab;
   padding: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.event1{
+
+.event1 {
   background-color: #fff;
   border-radius: 12px;
   padding: 16px;
 }
-.btn_pesan{
+
+.btn_pesan {
   width: 100%;
   padding: 5px;
   margin-top: 8px;
@@ -235,55 +264,58 @@ section.abuabu {
 }
 
 .support h6,
-.tim h6 {
-  margin: 0px;
-  margin-top: 20px;
-  padding: 0px;
-  font-size: 18px;
-  font-weight: bold;
-}
+.tim h6,
 .event h6 {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-size: 18px;
   font-weight: bold;
 }
+
 .event p {
-  margin: 0px;
+  margin: 0;
   margin-top: 16px;
-  padding: 0px;
+  padding: 0;
   font-size: 16px;
 }
-.support img {
-  width: 50px;
+
+.support img,
+.tim img,
+.event img {
+  width: 100%;
+  box-shadow: 0 -10px 30px #ccc;
+  border-radius: 5px;
 }
+
 .support div,
-.tim div {
-  text-align: center;
-  width: 26%;
-}
+.tim div,
 .event div {
   text-align: center;
   width: 26%;
 }
+
 section#gallery {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   overflow: hidden;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0;
 }
+
 section#gallery div {
   padding: 10px;
 }
+
 section#gallery div img {
   height: 100px;
   border-radius: 5px;
 }
+
 section#gallery div img:hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.1);
 }
+
 section.quote {
   background: url("asset/background-bromo.jpg") no-repeat;
   background-attachment: fixed;
@@ -295,71 +327,74 @@ section.quote {
   font-style: italic;
   padding: 100px;
 }
+
 section.quote .layar-dalam p {
   display: inline;
   background: url("asset/quote-icon.png") no-repeat;
   padding: 40px;
 }
-.tim img {
-  width: 100%;
-  box-shadow: 0px -10px 30px #ccc;
-  border-radius: 5px;
-}
-.event img {
-  width: 100%;
-  box-shadow: 0px -10px 30px #ccc;
-  border-radius: 5px;
-}
+
 .blog .area {
   width: 47%;
-  box-shadow: 0px -10px 30px #ccc;
+  box-shadow: 0 -10px 30px #ccc;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .blog div.area div {
   width: 50%;
 }
+
 .blog .area .gambar {
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0 0 5px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 300px;
 }
+
 .blog .area .text article {
   padding: 40px;
 }
+
 .blog .area .text article h4 {
-  margin: 0px;
+  margin: 0;
 }
+
 .blog .area .text article a {
   color: #333;
   text-decoration: none;
   transition: color 0.5s ease;
 }
+
 .blog .area .text article a:hover {
   color: #ccc;
 }
+
 footer {
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0;
   background-color: #343a40;
   color: #fff;
 }
+
 footer .layar-dalam {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 footer .layar-dalam div {
   width: 20%;
 }
+
 footer .layar-dalam h5 {
-  margin-top: 0px;
+  margin-top: 0;
   font-size: 20px;
   font-weight: bold;
 }
+
 footer .layar-dalam .copyright {
   width: 100%;
   margin-top: 30px;
@@ -367,6 +402,7 @@ footer .layar-dalam .copyright {
   border-top: 1px solid #666;
   text-align: center;
 }
+
 @media screen and (max-width: 991.98px) {
   .layar-dalam {
     width: 90%;
@@ -378,11 +414,11 @@ footer .layar-dalam .copyright {
     flex-direction: column;
     align-items: flex-start;
   }
-  header .intro .img-intro{
+
+  header .intro .img-intro {
     order: -1;
     margin-bottom: 32px;
   }
-
 
   nav .menu ul {
     display: none;
@@ -392,45 +428,43 @@ footer .layar-dalam .copyright {
     left: 0;
     width: 100%;
   }
+
   nav .menu ul li {
     width: 100%;
     border-bottom: 1px solid #ccc;
     background-color: #fff;
     line-height: 40px;
   }
+
   nav .menu ul li a {
     color: #333;
   }
+
   .tombol-menu {
     display: flex;
   }
+
   .blog .area {
     display: block;
   }
+
   .blog div.area div {
     width: 100%;
   }
+
   .blog .area .gambar {
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
     height: 200px;
   }
+
   .support {
     display: block;
   }
+
   .support div {
     width: 100%;
     padding-bottom: 30px;
   }
-
-
-
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
 }
 
 .container {
@@ -498,8 +532,122 @@ button:hover {
     width: 100%;
   }
 
-  header .intro .img-intro{
+  header .intro .img-intro {
     width: auto;
     height: 150px;
+  }
+}
+
+.navbar-scrolled {
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.navbar-scrolled .logo .putih {
+  display: none;
+}
+
+.navbar-scrolled .logo .hitam {
+  display: block;
+}
+
+.logo .putih {
+  display: block;
+}
+
+.logo .hitam {
+  display: none;
+}
+
+.event-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.event {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.event1 {
+  min-width: 300px;
+  margin: 10px;
+}
+
+.pelaksanaan-acara {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.location-img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.details {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.details .date,
+.details .location,
+.details .price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.details h6 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin: 5px 0;
+}
+
+.details .icon {
+  margin-top: 16px;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+}
+
+.icon-date {
+  background-image: url('asset/Kalender.png');
+}
+
+.icon-location {
+  background-image: url('asset/location.png');
+}
+
+.location-link {
+  color: blue;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .pelaksanaan-acara {
+    flex-wrap: nowrap;
+  }
+
+  .location-img,
+  .details {
+    max-width: 50%;
+  }
+
+  .details {
+    text-align: left;
   }
 }
