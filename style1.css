@@ -71,7 +71,7 @@ input[type="radio"] {
   display: block;
   width: 100%;
   padding: 15px;
-  background-color: #6200ea;
+  background-color: #466B4C;
   color: #fff;
   text-align: center;
   border: none;
@@ -81,7 +81,7 @@ input[type="radio"] {
 }
 
 .tombol:hover {
-  background-color: #4500b5;
+  background-color: #466B4C;
 }
 
 footer {
