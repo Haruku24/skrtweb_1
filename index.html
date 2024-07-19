@@ -4,13 +4,133 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Preconnect to Google Fonts to improve performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Link to a specific Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
   <title>SKRT!</title>
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: white;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      top: 0;
+      transition: background-color 0.3s;
+    }
+
+    .logo .hitam {
+      display: none;
+    }
+
+    .layar-penuh {
+      margin-top: 70px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu ul {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .menu ul li {
+      margin: 0 10px;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: black;
+      white-space: nowrap;
+    }
+
+    .tombol-menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    .tombol-menu span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      background-color: black;
+    }
+
+    /* Media query for mobile view */
+    @media (max-width: 768px) {
+      .menu ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: white;
+      }
+
+      .menu ul.active {
+        display: flex;
+      }
+
+      .tombol-menu {
+        display: block;
+      }
+    }
+
+    .img-intro,
+    .ringkasan-event img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .ringkasan-event img {
+      width: 50%;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .location a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    .location a:hover {
+      text-decoration: underline;
+    }
+
+    footer .layar-dalam {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .kontak-kami {
+      text-align: center;
+    }
+    
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }    
+  </style>
 </head>
 <body>
+  <!-- Navigation bar -->
   <nav>
     <div class="layar-dalam">
       <div class="logo">
@@ -28,7 +148,7 @@
           <li><a href="#tentang-event">Tentang Event</a></li>
           <li><a href="#pelaksanaan-acara">Pelaksanaan Acara</a></li>
           <li><a href="#events">Daftar Event</a></li>
-          <li><a class="tombol" href="#contact">Kontak</a></li>
+          <li><a href="#contact">Kontak</a></li>
         </ul>
       </div>
     </div>
@@ -36,10 +156,9 @@
   <div class="layar-penuh">
     <header id="home">
       <div class="overlay"></div>
-      
       <div class="intro">
         <div class="text-intro">
-          <img src="/asset/square-dot.png">
+          <img src="asset/square-dot.png">
           <h3>NGOPI</h3>
           <h4>Ngobrol Perkara Iman</h4>
           <p>Sebuah pembahasan yang mengusung konsep ngaji santai di kafe. Acara ini lahir dari kebutuhan untuk menemukan makna dalam kehidupan, khususnya bagi kaum muda yang tengah mencari jati diri dan penguatan iman.</p>
@@ -47,14 +166,14 @@
           <p><a href="#" class="tombol">Lihat lebih lanjut tentang event ini</a></p>
           <h4 style="margin: 8px;">Ikuti kami di sosial media</h4>
           <div style="display: flex; align-items:center;">
-            <img src="/asset/instagram.png" width="auto" height="50px">
+            <img src="asset/instagram.png" width="auto" height="50px">
             <div style="margin: 8px">
               <p style="margin-bottom: 0;">instagram.com/skrtmedia.id</p>
-              <p style="margin-top  : 0;">instagram.com/tafaqquh__</p>
+              <p style="margin-top: 0;">instagram.com/tafaqquh__</p>
             </div>
           </div>
         </div>
-        <img src="https://haruku24.github.io/skrtweb_1/asset/intro.PNG" class="img-intro">
+        <img src="asset/intro.png" class="img-intro">
       </div>
     </header>
     <main>
@@ -62,15 +181,14 @@
         <div class="layar-dalam">
           <h3>Ngobrol Perkara Iman</h3>
           <p>Berhenti sejenak dari hiruk-pikuk dunia, menikmati secangkir kopi, dan merenungkan perkara-perkara iman yang sering kali terlupakan</p>
-          <div class="ringkasan-event" style="display: flex;">
-            <img src="/asset/blog1.jpg" height="300px" width="auto">
+          <div class="ringkasan-event" style="display: flex; align-items: center;">
+            <img src="asset/blog1.jpg" height="300px" width="auto">
             <div class="ringkasan-text">
               <h2>Iman bukan hanya sekedar teori belaka.</h2>
               <p>Dalam suasana kafe yang hangat dan ramah, peserta diajak untuk menyelami lautan keimanan melalui diskusi yang interaktif dan penuh keakraban. Di sini, iman bukan hanya sekadar teori, tetapi sebuah pengalaman yang nyata dan relevan dalam kehidupan sehari-hari.</p>
             </div>
           </div>
         </div>
-      </section>
       <section id="pelaksanaan-acara">
         <div class="layar-dalam">
           <h3 style="text-align:center;">Pelaksanaan Acara</h3>
@@ -91,9 +209,6 @@
             <div class="price">
                 <span class="icon">💲</span>
                 <p>HTM: Rp. 50.000,-<br>Sudah termasuk benefit yang didapat</p>
-            </div>
-              <button class="tombol">Daftar Sekarang</button>
-            </div>
           </div>
         </div>
       </section>
@@ -135,53 +250,6 @@
           </div>
         </div>
       </section>
-
-      <section id="aboutus">
-        <div class="layar-dalam">
-          <h3>Tentang Kami</h3>
-          <p class="ringkasan">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Obcaecati, cupiditate.
-          </p>
-          <div class="konten-isi">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
-              iure vero soluta exercitationem deleniti possimus cupiditate
-              autem facilis magni illum?
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="abuabu" id="support">
-        <div class="layar-dalam support">
-          <div>
-            <img src="asset/matahari.png" alt="Matahari" />
-            <h6>Dalam Segala Kondisi</h6>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              illum recusandae nostrum. Obcaecati, quos vel.
-            </p>
-          </div>
-          <div>
-            <img src="asset/tas.png" alt="Tas" />
-            <h6>Tim Profesional</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Exercitationem, ea voluptatem corporis molestias obcaecati
-              deleniti.
-            </p>
-          </div>
-          <div>
-            <img src="asset/kompas.png" alt="Kompas" />
-            <h6>Pendaki Ahli</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Exercitationem, ea voluptatem corporis molestias obcaecati
-              deleniti.
-            </p>
-          </div>
-        </div>
-      </section>
     </section>
     <section id="gallery">
       <div><img src="asset/foto1.jpg" alt="Foto 1" /></div>
@@ -198,111 +266,32 @@
         <p>Sempat Kelam Resah Tinggalkan!</p>
       </div>
     </section>
-      <section id="tim">
-        <div class="layar-dalam">
-          <h3>Tim Kami</h3>
-          <p class="ringkasan">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. A,
-            laborum!
-          </p>
-          <div class="tim">
-            <div>
-              <img src="asset/tim1.jpg" alt="John Doe" />
-              <h6>John Doe</h6>
-              <span>Indonesia</span>
-            </div>
-            <div>
-              <img src="asset/tim2.jpg" alt="John Brown" />
-              <h6>John Brown</h6>
-              <span>Perancis</span>
-            </div>
-            <div>
-              <img src="asset/tim3.jpg" alt="Michaell" />
-              <h6>Michaell</h6>
-              <span>Spanyol</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="abuabu" id="blog">
-        <div class="layar-dalam">
-          <h3>Blog Terbaru</h3>
-          <p class="ringkasan">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-            fugit.
-          </p>
-          <div class="blog">
-            <div class="area">
-              <div
-                class="gambar"
-                style="background-image: url('asset/blog1.jpg')"
-                aria-label="What About Bromo?"
-              ></div>
-              <div class="text">
-                <article>
-                  <h4><a href="#">Apa Kabar Bromo?</a></h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat, est omnis? Quas reprehenderit rem nesciunt.
-                  </p>
-                </article>
-              </div>
-            </div>
-            <div class="area">
-              <div
-                class="gambar"
-                style="background-image: url('asset/blog2.jpg')"
-                aria-label="What About Yogyakarta?"
-              ></div>
-              <div class="text">
-                <article>
-                  <h4><a href="#">Apa Kabar Yogyakarta?</a></h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat, est omnis? Quas reprehenderit rem nesciunt.
-                  </p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
     <footer id="contact">
       <div class="layar-dalam">
-        <div>
-          <h5>Info</h5>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-          sunt?
-        </div>
-        <div>
-          <h5>Kontak</h5>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-          sunt?
-        </div>
-        <div>
-          <h5>Bantuan</h5>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-          sunt?
-        </div>
-        <div>
-          <h5>Peta Situs</h5>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
-          sunt?
+        <div class="kontak-kami">
+          <h5>Kontak Kami</h5>
+          <div class="footer-contact">
+            <a href="https://wa.me/6281234567890" target="_blank">
+              <img src="asset/whatsapp.png" alt="WhatsApp" style="width: 50px; height: 50px;">
+            </a>
+          </div>
         </div>
       </div>
       <div class="layar-dalam">
         <div class="copyright">&copy; 2024 skrtmedia.id</div>
       </div>
-    </footer>
+    </footer>        
   </div>
   <script>
+    // Event listener for scroll events to change navbar style
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('nav');
       const logoPutih = document.querySelector('.logo .putih');
       const logoHitam = document.querySelector('.logo .hitam');
       const menuLinks = document.querySelectorAll('.menu ul li a');
-  
+
+      // Change navbar style when user scrolls
       if (window.scrollY > 0) {
         navbar.classList.add('navbar-scrolled');
         logoPutih.style.display = 'none';
@@ -314,6 +303,11 @@
         logoHitam.style.display = 'none';
         menuLinks.forEach(link => link.style.color = '');
       }
+    });
+
+    // Event listener for menu button to toggle mobile menu
+    document.querySelector('.tombol-menu').addEventListener('click', function() {
+      document.querySelector('.menu ul').classList.toggle('active');
     });
   </script>  
 </body>
