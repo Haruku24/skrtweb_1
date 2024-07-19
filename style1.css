@@ -141,3 +141,28 @@ footer a:hover {
     width: 40px;
   }
 }
+
+.payment-method {
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.payment-method img {
+  margin-right: 10px;
+}
+.payment-method label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.payment-method .payment-info {
+  display: flex;
+  align-items: center;
+}
+.payment-method input[type="radio"] {
+  margin-left: 20px;
+}
