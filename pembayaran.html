@@ -6,77 +6,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metode Pembayaran</title>
     <link rel="stylesheet" href="style1.css" />
+    <style>
+      .payment-method {
+        border: 1px solid #ddd;
+        padding: 8px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .payment-method img {
+        margin-right: 10px;
+      }
+      .payment-method label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .payment-method .payment-info {
+        display: flex;
+        align-items: center;
+      }
+      .payment-method input[type="radio"] {
+        margin-left: 20px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h2>Metode Pembayaran</h2>
-      <form id="paymentForm" method="post">
-        <div class="form-group">
-          <label for="nama">Nama:</label>
-          <input type="text" id="nama" name="nama" required />
-        </div>
-        <div class="form-group">
-          <label for="no_wa">Masukkan Nomor Whatsapp:</label>
-          <input
-            type="text"
-            id="no_wa"
-            name="no_wa"
-            placeholder="Contoh 081234567890"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="metode_pembayaran">Pilih Metode Pembayaran:</label>
-        </div>
-        <br />
-        <div class="form-group payment-methods">
-          <p><b>QRIS</b></p>
-          <p>Pembayaran melalui BCA dan Bank Lainnya bisa menggunakan QRIS.</p>
-          <label>
-            <input type="radio" name="payment" value="QRIS" />
-            <img src="asset/qris.jpg" alt="QRIS" /> QRIS
-          </label>
-          <p><b>Transfer Bank (Virtual Account)</b></p>
-          <label>
-            <input type="radio" name="payment" value="BRI" required />
-            <img src="asset/bri2.jpg" alt="Bank BRI" /> Bank BRI
-          </label>
-          <label>
-            <input type="radio" name="payment" value="BNI" />
-            <img src="asset/bni.webp" alt="Bank BNI" /> Bank BNI
-          </label>
-          <label>
-            <input type="radio" name="payment" value="Mandiri" />
-            <img src="asset/mandiri.png" alt="Bank Mandiri" /> Bank Mandiri
-          </label>
-          <p><b>E-Wallet</b></p>
-          <label>
-            <input type="radio" name="payment" value="Gopay" />
-            <img src="asset/gopay.png" alt="Gopay" /> Gopay
-          </label>
-        </div>
-        <div class="form-group">
-          <label for="jumlah_peserta">Jumlah Peserta:</label>
-          <input
-            type="number"
-            id="jumlah_peserta"
-            name="jumlah_peserta"
-            value="1"
-            min="1"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="harga_peserta">Harga per Peserta:</label>
-          <input
-            type="number"
-            id="harga_peserta"
-            name="harga_peserta"
-            value="100000"
-            min="0"
-            required
-          />
-        </div>
+      <div class="left-column">
+        <h2>Informasi Pribadi</h2>
+        <form id="paymentForm" method="post">
+          <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required />
+          </div>
+          <div class="form-group">
+            <label for="Alamat">Alamat:</label>
+            <input type="text" id="Alamat" name="Alamat" required />
+          </div>
+          <div class="form-group">
+            <label for="no_wa">Masukkan Nomor Whatsapp:</label>
+            <input
+              type="text"
+              id="no_wa"
+              name="no_wa"
+              placeholder="Contoh 081234567890"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="jumlah_peserta">Jumlah Peserta:</label>
+            <input
+              type="number"
+              id="jumlah_peserta"
+              name="jumlah_peserta"
+              value="1"
+              min="1"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="harga_peserta">Harga per Peserta:</label>
+            <input
+              type="number"
+              id="harga_peserta"
+              name="harga_peserta"
+              value="100000"
+              min="0"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <button type="button" id="togglePaymentMethods" class="tombol">
+              Tampilkan Metode Pembayaran ▼
+            </button>
+          </div>
+          <br />
+          <div
+            id="paymentMethods"
+            class="form-group payment-methods"
+            style="display: none"
+          >
+            <b>QRIS</b><br /><i
+              >Pembayaran melalui BCA dan Bank Lainnya bisa menggunakan QRIS.</i
+            ><br /><br />
+            <div class="payment-method">
+              <label>
+                <div class="payment-info">
+                  <img src="asset/qris.jpg" alt="QRIS" />
+                  QRIS
+                </div>
+                <input type="radio" name="payment" value="QRIS" />
+              </label>
+            </div>
+            <br />
+            <b>Transfer Bank (Virtual Account)</b>
+            <br /><br />
+            <div class="payment-method">
+              <label>
+                <div class="payment-info">
+                  <img src="asset/bri2.jpg" alt="Bank BRI" />
+                  Bank BRI
+                </div>
+                <input type="radio" name="payment" value="BRI" required />
+              </label>
+            </div>
+
+            <div class="payment-method">
+              <label>
+                <div class="payment-info">
+                  <img src="asset/bni.webp" alt="Bank BNI" />
+                  Bank BNI
+                </div>
+                <input type="radio" name="payment" value="BNI" />
+              </label>
+            </div>
+
+            <div class="payment-method">
+              <label>
+                <div class="payment-info">
+                  <img src="asset/mandiri.png" alt="Bank Mandiri" />
+                  Bank Mandiri
+                </div>
+                <input type="radio" name="payment" value="Mandiri" />
+              </label>
+            </div>
+            <br />
+            <b>E-Wallet</b>
+            <br /><br />
+            <div class="payment-method">
+              <label>
+                <div class="payment-info">
+                  <img src="asset/gopay.png" alt="Gopay" />
+                  Gopay
+                </div>
+                <input type="radio" name="payment" value="Gopay" />
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="right-column">
+        <h2>Deskripsi Tiket yang Dibeli</h2>
         <div class="price-details">
           <div class="price-item">
             <p><b>Jumlah Peserta</b></p>
@@ -96,17 +169,11 @@
           </div>
         </div>
         <div class="form-group">
-          <button type="submit" class="tombol">Bayar Sekarang</button>
+          <button type="button" id="confirmOrder" class="tombol">
+            Konfirmasi Pesanan
+          </button>
         </div>
-      </form>
-      <footer>
-        <p>Sharing Time UHA</p>
-        <a href="#aboutus">Tentang Kami</a>
-        <a href="#privacy">Kebijakan Privasi</a>
-        <a href="#contact">Kontak Kami</a>
-        <a href="#terms">Syarat dan Ketentuan</a>
-        <p>&copy; 2024 - All rights reserved by Ayah Amanah</p>
-      </footer>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
