@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const jumlahPeserta = parseInt(jumlahPesertaInput.value);
     const hargaPerPeserta = parseInt(hargaPesertaInput.value);
     const totalHarga = hargaPerPeserta * jumlahPeserta;
-    jumlahPesertaOutput.textContent = ${jumlahPeserta} Peserta;
-    hargaElement.textContent = Rp. ${hargaPerPeserta.toLocaleString()} x ${jumlahPeserta};
-    totalElement.textContent = Rp. ${totalHarga.toLocaleString()};
+    jumlahPesertaOutput.textContent = `${jumlahPeserta} Peserta`;
+    hargaElement.textContent = `Rp. ${hargaPerPeserta.toLocaleString()} x ${jumlahPeserta}`;
+    totalElement.textContent = `Rp. ${totalHarga.toLocaleString()}`;
   }
 
   jumlahPesertaInput.addEventListener("input", updateHargaTotal);
