@@ -5,7 +5,7 @@
 }
 
 body {
-  background: floralwhite;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,11 +30,11 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4caf50;
+  background-color: #466B4C;
   color: white;
   border: none;
   border-radius: 5px;
 }
 #qr-btn:hover {
-  background-color: #45a049;
+  background-color: #466B4C;
 }
