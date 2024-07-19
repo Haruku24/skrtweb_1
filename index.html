@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Link to a specific Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
   <title>SKRT!</title>
   <!-- Link to external stylesheet -->
@@ -20,16 +22,12 @@
     }
 
     nav {
-      background-color: grey; /* Changed to grey */
+      background-color: transparent; /* Changed to grey */
       position: fixed;
       width: 100%;
       z-index: 1000;
       top: 0;
       transition: background-color 0.3s;
-    }
-
-    .logo .hitam {
-      display: none;
     }
 
     .layar-penuh {
@@ -181,7 +179,6 @@
   <nav>
     <div class="layar-dalam">
       <div class="logo">
-        <a href="#"><img src="asset/skrt2.png" class="putih" alt="Logo Putih" /></a>
         <a href="#"><img src="asset/skrt2.png" class="hitam" alt="Logo Hitam" /></a>
       </div>
       <div class="menu">
@@ -207,17 +204,16 @@
         <div class="text-intro">
           <img src="asset/square-dot.png">
           <h3>NGOPI</h3>
-          <h4>Ngobrol Perkara Iman</h4>
-          <p>Sebuah pembahasan yang mengusung konsep ngaji santai di kafe. Acara ini lahir dari kebutuhan untuk menemukan makna dalam kehidupan, khususnya bagi kaum muda yang tengah mencari jati diri dan penguatan iman.</p>
+          <h4>Segelas Rasa & Makna</h4>
+          <p>Tongkrongan seringkali menjadi opsi pilihan sebagai tempat untuk share segala rasa.<br>
+            Menumpahkan resah, menemukan senang atau hanya sekedar menghilangkan jenuh belaka.<br>
+            Dikemas dalam bincang santai yang kita arahkan pada sebuah tujuan , agar nongkrong tidak hanya menjadi sebuah kesenangan yang kosong.</p>
           <br>
-          <p><a href="#" class="tombol">Lihat lebih lanjut tentang event ini</a></p>
-          <h4 style="margin: 8px;">Ikuti kami di sosial media</h4>
-          <div style="display: flex; align-items:center;">
-            <img src="asset/instagram.png" width="auto" height="50px">
-            <div style="margin: 8px">
-              <p style="margin-bottom: 0;">instagram.com/skrtmedia.id</p>
-              <p style="margin-top: 0;">instagram.com/tafaqquh__</p>
-            </div>
+          <p><a href="#tentang-event" class="tombol">Lihat lebih lanjut tentang event ini</a></p>
+          <h4 style="margin: 8px;">Kolaborasi Media :</h4>
+          <div style="align-items:center;">
+            <a href="https://instagram.com/skrtmedia.id" style="margin-right: 8px;"><img src="asset/skrt2.png" width="auto" height="30px"></a>
+            <a href="https://instagram.com/tafaqquh__"><img src="asset/tafaquh.png" width="auto" height="50px"></a>
           </div>
         </div>
         <img src="asset/intro.png" class="img-intro">
@@ -226,13 +222,13 @@
     <main>
       <section id="tentang-event">
         <div class="layar-dalam">
-          <h3>Ngobrol Perkara Iman</h3>
-          <p>Berhenti sejenak dari hiruk-pikuk dunia, menikmati secangkir kopi, dan merenungkan perkara-perkara iman yang sering kali terlupakan</p>
-          <div class="ringkasan-event">
+          <h3>Tentang Rasa</h3><div class="ringkasan-event">
             <img src="asset/blog1.jpg" height="300px" width="auto">
             <div class="ringkasan-text">
-              <h2>Iman bukan hanya sekedar teori belaka.</h2>
-              <p>Dalam suasana kafe yang hangat dan ramah, peserta diajak untuk menyelami lautan keimanan melalui diskusi yang interaktif dan penuh keakraban. Di sini, iman bukan hanya sekadar teori, tetapi sebuah pengalaman yang nyata dan relevan dalam kehidupan sehari-hari.</p>
+              <p>Rasa Cemas dan resah yang kerap kali datang tanpa aba – aba,  menjadikan kita bingung dalam bertingkah dan beraktivitas untuk menghilangkannya
+                Healing dan melakukan segala hal yang disuka menjadi upaya uuntuk menghempaskan, namun rasa itu kian besar  enggan beranjak.
+                Tentang rasa adalah tentang Hati, yang merupakan bagian  dalam diri kita, namun seringkali takbisa dikontrol oleh diri.
+                Karena hati punya pemilik yang tidak kuasa kita mengaturnya kecuali di kembalikan ia  kepada pemiliknya.</p>
             </div>
           </div>
         </div>
@@ -245,17 +241,17 @@
             <!-- <img src="asset/RaRaHaJa.png" alt="Lokasi Acara" class="location-img" /> -->
             <div class="details">
               
-              <h6>NGOPI (Ngobrol Perkara Iman)</h6>
+              <h6>NGOPI</h6>
               <div class="date">
-                <span class="icon">📅</span>
+                <span class="icon"><img src="/asset/location.png" style="height: 30px; width:auto;"></span>
                 <p>Sabtu, 3 Agustus 2024<br>Ba'da Isya - selesai</p>
             </div>
             <div class="location">
-                <span class="icon">📍</span>
+                <span class="icon"><img src="/asset/Kalender.png" style="height: 30px; width:auto;"></span>
                 <p>Kedai Rarahaja<br>Jl. Panatayuda II, Nagasari, Karawang Barat</p>
             </div>
             <div class="price">
-                <span class="icon">💲</span>
+                <span class="icon"></span>
                 <p>HTM: Rp. 50.000,-<br>Sudah termasuk benefit yang didapat</p>
           </div>
         </div>
@@ -351,13 +347,11 @@
       // Change navbar style when user scrolls
       if (window.scrollY > 0) {
         navbar.classList.add('navbar-scrolled');
-        logoPutih.style.display = 'none';
-        logoHitam.style.display = 'block';
+        logoHitam.style.display = 'inline';
         menuLinks.forEach(link => link.style.color = '');
       } else {
         navbar.classList.remove('navbar-scrolled');
-        logoPutih.style.display = 'block';
-        logoHitam.style.display = 'none';
+        logoHitam.style.display = 'inline';
         menuLinks.forEach(link => link.style.color = '');
       }
     });
