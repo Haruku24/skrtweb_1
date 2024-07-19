@@ -127,6 +127,25 @@
       justify-content: center;
       align-items: center;
     }    
+    
+    /* New CSS for Gallery */
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px; /* Jarak antara gambar */
+      padding: 10px; /* Memberikan sedikit padding pada kontainer */
+    }
+
+    .gallery-container div {
+      flex: 0 0 auto; /* Mencegah elemen div menyusut */
+    }
+
+    .gallery-container img {
+      height: auto;
+      width: 100%;
+      max-width: 200px; /* Mengatur ukuran maksimum gambar */
+      object-fit: cover; /* Memastikan gambar memenuhi kontainer */
+    }
   </style>
 </head>
 <body>
@@ -252,14 +271,16 @@
       </section>
     </section>
     <section id="gallery">
-      <div><img src="asset/foto1.jpg" alt="Foto 1" /></div>
-      <div><img src="asset/foto2.jpg" alt="Foto 2" /></div>
-      <div><img src="asset/foto3.jpg" alt="Foto 3" /></div>
-      <div><img src="asset/foto4.jpg" alt="Foto 4" /></div>
-      <div><img src="asset/foto5.jpg" alt="Foto 5" /></div>
-      <div><img src="asset/foto6.jpg" alt="Foto 6" /></div>
-      <div><img src="asset/foto7.jpg" alt="Foto 7" /></div>
-      <div><img src="asset/foto8.jpg" alt="Foto 8" /></div>
+      <div class="gallery-container">
+        <div><img src="asset/foto1.jpg" alt="Foto 1" /></div>
+        <div><img src="asset/foto2.jpg" alt="Foto 2" /></div>
+        <div><img src="asset/foto3.jpg" alt="Foto 3" /></div>
+        <div><img src="asset/foto4.jpg" alt="Foto 4" /></div>
+        <div><img src="asset/foto5.jpg" alt="Foto 5" /></div>
+        <div><img src="asset/foto6.jpg" alt="Foto 6" /></div>
+        <div><img src="asset/foto7.jpg" alt="Foto 7" /></div>
+        <div><img src="asset/foto8.jpg" alt="Foto 8" /></div>
+      </div>
     </section>
     <section class="quote">
       <div class="layar-dalam">
