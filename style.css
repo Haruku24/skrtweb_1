@@ -85,18 +85,11 @@ nav ul li a:hover {
 }
 
 header {
+  padding-top: 64px;
   position: relative;
-  height: 90vh;
+  height: auto;
   width: 100%;
   text-align: center;
-}
-
-header video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  z-index: -2;
 }
 
 header .intro {
@@ -108,6 +101,12 @@ header .intro {
   display: flex;
 }
 
+header .intro .intro-kanan .kolaborasi{
+  display: flex;
+  margin:32px;
+  justify-content: center;
+}
+
 header .intro .img-intro {
   width: auto;
   height: 300px;
@@ -116,7 +115,7 @@ header .intro .img-intro {
 }
 
 header .intro .text-intro {
-  min-width: 40%;
+  width: 50%;
 }
 
 header .intro h3 {
@@ -166,11 +165,12 @@ header .overlay {
   justify-content: space-between;
   width: 30px;
   height: 20px;
+  color: #000;
 }
 
 .tombol-menu .garis {
   height: 3px;
-  background-color: #fff;
+  background-color: #000;
 }
 
 section {
@@ -183,9 +183,10 @@ section h3 {
 
 section h3::after {
   content: "";
-  border-bottom: 5px solid #c86b85;
+  border-bottom: 5px solid #466B4C;
   width: 52px;
   display: block;
+  border-radius: 20%;
   margin: 20px auto;
 }
 
@@ -206,9 +207,8 @@ section h3::after {
 }
 
 section p.ringkasan {
-  font-style: italic;
   font-size: 18px;
-  color: #ababab;
+  color: #333;
 }
 
 section .konten-isi p {
@@ -232,24 +232,33 @@ section.abuabu {
 }
 
 .event {
-  background-color: #ababab;
   padding: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
+.event .ringkasan{
+  text-align: left;
+}
+
 .event1 {
-  background-color: #fff;
+  background: linear-gradient(to top left, #A4B6AB, #F6F8F8);
+  border-radius: 12px;
+  padding: 16px;
+}
+.event2 {
+  background: linear-gradient(to top left, #A4B6AB, #F6F8F8);
   border-radius: 12px;
   padding: 16px;
 }
 
+
 .btn_pesan {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   margin-top: 8px;
-  background-color: teal;
+  background-color: #466B4C;
   color: #fff;
   border-radius: 8px;
   border: none;
@@ -320,6 +329,21 @@ section.quote .layar-dalam p {
   padding: 40px;
 }
 
+/* Tampilan Google Maps */
+.map-container {
+  width: 400px;
+  height: 400px;
+  border: 0;
+  overflow: hidden;
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 footer {
   padding: 50px 0;
   background-color: #343a40;
@@ -346,57 +370,6 @@ footer .layar-dalam .copyright {
   padding-top: 30px;
   border-top: 1px solid #666;
   text-align: center;
-}
-
-@media screen and (max-width: 991.98px) {
-  .layar-dalam {
-    width: 90%;
-  }
-
-  header .intro {
-    top: 10%;
-    margin-top: 16px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header .intro .img-intro {
-    order: -1;
-    margin-bottom: 32px;
-  }
-
-  nav .menu ul {
-    display: none;
-    margin-top: 60px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  nav .menu ul li {
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    background-color: #fff;
-    line-height: 40px;
-  }
-
-  nav .menu ul li a {
-    color: #333;
-  }
-
-  .tombol-menu {
-    display: flex;
-  }
-
-  .support {
-    display: block;
-  }
-
-  .support div {
-    width: 100%;
-    padding-bottom: 30px;
-  }
 }
 
 .container {
@@ -459,16 +432,6 @@ button:hover {
   background-color: #555;
 }
 
-@media (max-width: 600px) {
-  input, select, button {
-    width: 100%;
-  }
-
-  header .intro .img-intro {
-    width: auto;
-    height: 150px;
-  }
-}
 
 .navbar-scrolled {
   background-color: white;
@@ -495,10 +458,17 @@ button:hover {
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  align-items: center;
 }
 
 .event1 {
   min-width: 300px;
+  margin: 10px;
+}
+.event2 {
+  align-content: center;
+  min-width: 250px;
+  height: auto;
   margin: 10px;
 }
 
@@ -508,6 +478,7 @@ button:hover {
   margin-top: 20px;
   justify-content: center;
   text-align: center;
+  gap: 64px;
 }
 
 .location-img {
@@ -532,6 +503,7 @@ button:hover {
   align-items: center;
   gap: 10px;
   margin: 10px 0;
+  text-align: left;
 }
 
 .details h6 {
@@ -542,6 +514,13 @@ button:hover {
 
 .details p {
   margin: 5px 0;
+  font-style: bold;
+  font-size: 18px;
+}
+
+span.detail{
+  font-size: 12px;
+  color: #666;
 }
 
 .details .icon {
@@ -564,17 +543,91 @@ button:hover {
   cursor: pointer;
 }
 
+/*Media Responsive View*/
+
+@media screen and (max-width: 991.98px) {
+  .layar-dalam {
+    width: 90%;
+  }
+
+  header .intro {
+    top: 10%;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .intro .intro-kanan {
+    order: -1;
+    margin-bottom: 32px;
+  }
+
+  header .intro .text-intro {
+    width: 100%;
+  }
+
+  nav .menu ul {
+    display: none;
+    margin-top: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  nav .menu ul li {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 40px;
+  }
+
+  nav .menu ul li a {
+    color: #333;
+  }
+
+  .tombol-menu {
+    display: flex;
+  }
+
+  .event-container{
+    display: block;
+  }
+
+  .support {
+    display: block;
+  }
+
+  .support div {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  input, select, button {
+    width: 100%;
+  }
+
+  header .intro .img-intro {
+    width: auto;
+    height: 150px;
+  }
+  header .intro .intro-kanan .kolaborasi{
+    margin:0px;
+  }
+  header .intro .intro-kanan .kolaborasi h4{
+    font-size:12px;
+  }
+  header .intro .intro-kanan .kolaborasi img{
+    width: 30px;
+    height: auto;
+  }
+
+}
+
 @media (min-width: 600px) {
   .pelaksanaan-acara {
     flex-wrap: nowrap;
-  }
-
-  .location-img,
-  .details {
-    max-width: 50%;
-  }
-
-  .details {
-    text-align: left;
   }
 }

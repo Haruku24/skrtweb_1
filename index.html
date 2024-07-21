@@ -60,10 +60,12 @@
     .tombol-menu {
       display: none;
       cursor: pointer;
+      color: #000;
     }
 
     .tombol-menu span {
       display: block;
+      color: #000;
       width: 25px;
       height: 3px;
       margin: 5px;
@@ -203,21 +205,25 @@
             Dikemas dalam bincang santai yang kita arahkan pada sebuah tujuan , agar nongkrong tidak hanya menjadi sebuah kesenangan yang kosong.</p>
           <br>
           <p><a href="#tentang-event" class="tombol">Lihat lebih lanjut tentang event ini</a></p>
-          <h4 style="margin: 8px;">Kolaborasi Media :</h4>
-          <div style="align-items:center;">
-            <a href="https://instagram.com/skrtmedia.id" style="margin-right: 8px;"><img src="asset/skrt2.png" width="auto" height="30px"></a>
-            <a href="https://instagram.com/tafaqquh__"><img src="asset/tafaquh.png" width="auto" height="50px"></a>
+        </div>
+        <div class="intro-kanan" style="margin-right: 2%">
+          <img src="asset/intro.png" class="img-intro">
+          <div class="kolaborasi">
+          <h4>Kolaborasi Media :</h4>
+            <div style="display: flex; align-items:center; margin-left: 16px; gap: 16px;">
+              <a href="https://instagram.com/skrtmedia.id" style="margin-right: 8px;"><img src="asset/skrt2.png" width="auto" height="30px"></a>
+              <a href="https://instagram.com/tafaqquh__"><img src="asset/tafaquh.png" width="auto" height="50px"></a>
+            </div>
           </div>
         </div>
-        <img src="asset/intro.png" class="img-intro">
       </div>
     </header>
     <main>
       <section id="tentang-event">
         <div class="layar-dalam">
           <h3>Tentang Rasa</h3><div class="ringkasan-event">
-            <div style="border-radius: 16px; width:600px;">
-              <img src="asset/blog1.jpg" height="300px" width="auto">
+            <div style="width:100%;">
+              <img src="asset/poster-ngopi.png" style="border-radius: 16px;">
             </div>
               <div class="ringkasan-text">
               <p>Rasa Cemas dan resah yang kerap kali datang tanpa aba – aba,<br>  menjadikan kita bingung dalam bertingkah dan beraktivitas untuk menghilangkannya.<br><br>
@@ -232,58 +238,47 @@
         <div class="layar-dalam">
           <h3 style="text-align:center;">Pelaksanaan Acara</h3>
           <div class="pelaksanaan-acara">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6805844931246!2d107.30234467499953!3d-6.305630661710403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6977629e10aa29%3A0x4f7ff11140887c09!2sRaRaHaJa!5e0!3m2!1sid!2sid!4v1721344294087!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <!-- <img src="asset/RaRaHaJa.png" alt="Lokasi Acara" class="location-img" /> -->
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6805844931246!2d107.30234467499953!3d-6.305630661710403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6977629e10aa29%3A0x4f7ff11140887c09!2sRaRaHaJa!5e0!3m2!1sid!2sid!4v1721344294087!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- <img src="asset/RaRaHaJa.png" alt="Lokasi Acara" class="location-img" /> -->
             <div class="details">
               
               <h6>NGOPI</h6>
               <div class="date">
-                <span class="icon"><img src="/asset/location.png" style="height: 30px; width:auto;"></span>
-                <p>Sabtu, 3 Agustus 2024<br>Ba'da Isya - selesai</p>
+                <span class="icon"><img src="/asset/Kalender.png" style="height: 30px; width:auto;"></span>
+                <p>Sabtu, 3 Agustus 2024<br><span class="detail">Ba'da Isya - selesai</span></p>
             </div>
             <div class="location">
-                <span class="icon"><img src="/asset/Kalender.png" style="height: 30px; width:auto;"></span>
-                <p>Kedai Rarahaja<br>Jl. Panatayuda II, Nagasari, Karawang Barat</p>
+                <span class="icon"><img src="/asset/location.png" style="height: 30px; width:auto;"></span>
+                <p>Kedai Rarahaja<br><span class="detail">Jl. Panatayuda II, Nagasari, Karawang Barat</span></p>
             </div>
             <div class="price">
                 <span class="icon"></span>
-                <p>HTM: Rp. 50.000,-<br>Sudah termasuk benefit yang didapat</p>
-          </div>
+                <p>HTM: Rp. 50.000,-<br><span class="detail">Sudah termasuk benefit yang didapat</span></p>
+            </div>
+            <button class="btn_pesan" onclick="window.location.href='pembayaran.html';">Pesan Tiket</button>
         </div>
       </section>
       <section id="events">
         <div class="layar-dalam">
-          <h3>Daftar Event</h3>
-          <p class="ringkasan">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, laborum!</p>
+          <h3>Daftar Event</h3>          
           <div class="event-container">
+            <p class="ringkasan" style="text-align: left;">Tidak hanya menghadirkan diskusi mendalam seputar perkara iman, kami juga menawarkan berbagai kegiatan menarik lainnya yang dirancang untuk memperkaya pengalaman yang  memberikan wawasan baru, serta inspirasi.</p>
             <div class="event" id="event-scroll">
               <div class="event1">
                 <img src="asset/poster-ngopi.png" alt="Gambar Event 1" />
                 <h6>NGOPI</h6>
-                <span>Ngobrol Perkara Iman</span>
+                <span>Segelas Rasa & Makna</span>
                 <p>Sabtu, 3 Agustus 2024</p>
                 <button class="btn_pesan" onclick="window.location.href='pembayaran.html';">Pesan Tiket</button>
               </div>
-              <div class="event1">
+              <div class="event2">
                 <img src="asset/poster-ngopi.png" alt="Gambar Event 2" />
                 <h6>SKRT Camp</h6>
-                <span>Ngobrol Suasana Alam</span>
+                <span>Diskusi Santai Bernuansa Alam</span>
                 <p>Segera Hadir</p>
                 <button class="btn_pesan">Segera Hadir</button>
-              </div>
-              <div class="event1">
-                <img src="asset/tim4.jpg" alt="Gambar Event 3" />
-                <h6>Hello Gaes</h6>
-                <span>Ngobrol With Fachri Husaeni</span>
-                <p>Sabtu, 10 Agustus 2024</p>
-                <button class="btn_pesan">Segera Hadir</button>
-              </div>
-              <div class="event1">
-                <img src="asset/tim5.jpg" alt="Gambar Event 4" />
-                <h6>Peace Gaes</h6>
-                <span>Ngobrol Alam With Fachri Husaeni</span>
-                <p>Segera Hadir</p>
-                <button class="btn_pesan">Segera Hadir</button>
+              </div>              
               </div>
             </div>
           </div>
