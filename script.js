@@ -46,3 +46,4 @@ document.getElementById("confirmOrder").addEventListener("click", function () {
     document.getElementById("paymentForm").submit();
   }
 });
+
