@@ -95,6 +95,7 @@ header {
 header .intro {
   z-index: 100;
   margin-left: 5%;
+  margin-right: 5%;
   text-align: left;
   position: relative;
   top: 10%;
@@ -238,7 +239,7 @@ section.abuabu {
   justify-content: space-evenly;
 }
 
-.event .ringkasan{
+section p.ringkasan{
   text-align: left;
 }
 
@@ -548,16 +549,16 @@ span.detail{
 .main-btn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #466B4C;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .main-btn:hover {
-    background-color: #0056b3;
+    background-color: #233627;
 }
 
 .popup {
@@ -683,6 +684,11 @@ input[type="text"], input[type="email"], input[type="tel"] {
   color: #777;
 }
 
+.detail-price{
+  display: flex;
+  justify-content: space-between;
+}
+
 /*Media Responsive View*/
 
 @media screen and (max-width: 991.98px) {
@@ -745,10 +751,16 @@ input[type="text"], input[type="email"], input[type="tel"] {
 }
 
 @media (max-width: 600px) {
+  .ringkasan-text p{
+    text-align: center;
+  }
   input, select, button {
     width: 100%;
   }
-
+  header .intro{
+    align-items: center;
+    text-align: center;
+  }
   header .intro .img-intro {
     width: auto;
     height: 150px;
@@ -762,6 +774,12 @@ input[type="text"], input[type="email"], input[type="tel"] {
   header .intro .intro-kanan .kolaborasi img{
     width: 30px;
     height: auto;
+  }
+  header .intro p{
+    width: 100%;
+  }
+  section p.ringkasan{
+    text-align: center;
   }
   .popup-content {
     background: #fff;

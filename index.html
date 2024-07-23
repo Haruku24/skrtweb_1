@@ -74,7 +74,7 @@
     }
 
     /* Media query for mobile view */
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       .menu ul {
         flex-direction: column;
         display: none;
@@ -178,7 +178,7 @@
         <a href="#"><img src="asset/skrt2.png" class="hitam" alt="Logo Hitam" /></a>
       </div>
       <div class="menu">
-        <a href="#" class="tombol-menu">
+        <a class="tombol-menu">
           <span class="garis"></span>
           <span class="garis"></span>
           <span class="garis"></span>
@@ -257,7 +257,6 @@
                 <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/tickets.png" alt="price" style="height: 30px; width:auto;"></span>
                 <p>HTM: Rp. 50.000,-<br><span class="detail">Sudah termasuk benefit yang didapat</span></p>
             </div>
-            <button class="btn_pesan" onclick="window.location.href='pembayaran.html';">Pesan Tiket</button>
             <button id="buyTicketBtn" class="main-btn">Pesan Tiket</button>
         </div>
       </section>
@@ -288,12 +287,12 @@
                   <select id="payment-method" class="dropdown">
                       <optgroup label="Rekening Bank">
                           <option value="mandiri" data-icon="asset/mandiri.jpg">Mandiri</option>
-                          <option value="bca" data-icon="/asset/bca.jpg">BCA</option>
-                          <option value="bni" data-icon="/asset/bni.jpg">BNI</option>
-                          <option value="bri" data-icon="asset/bri.jpg">BRI</option>
+                          <option value="bca" data-icon="/asset/bca.jpg">Bank BCA</option>
+                          <option value="bni" data-icon="/asset/bni.jpg">Bank BNI</option>
+                          <option value="bri" data-icon="asset/bri.jpg">Bank BRI</option>
                       </optgroup>
                       <optgroup label="E-Wallet">
-                          <option value="ovo" data-icon="images/ovo-icon.png">Ovo</option>
+                          <option value="ovo" data-icon="images/ovo-icon.png">OVO</option>
                           <option value="dana" data-icon="images/dana-icon.png">Dana</option>
                           <option value="gopay" data-icon="images/gopay-icon.png">GoPay</option>
                           <option value="linkaja" data-icon="images/linkaja-icon.png">LinkAja</option>
@@ -306,7 +305,7 @@
                 <br><br>
                 <h2>DETAIL PEMESANAN</h2>
                 <p>Ngopi - Segelas Rasa & Makna</p>
-                <div class="detail-price" style="display: flex;">
+                <div class="detail-price">
                   <div>
                     <p>Jumlah Tiket</p>
                     <p>Harga</p>
@@ -328,7 +327,7 @@
         <div class="layar-dalam">
           <h3>Daftar Event</h3>          
           <div class="event-container">
-            <p class="ringkasan" style="text-align: left;">Tidak hanya menghadirkan diskusi mendalam seputar perkara iman, kami juga menawarkan berbagai kegiatan menarik lainnya yang dirancang untuk memperkaya pengalaman yang  memberikan wawasan baru, serta inspirasi.</p>
+            <p class="ringkasan">Tidak hanya menghadirkan diskusi mendalam seputar perkara iman, kami juga menawarkan berbagai kegiatan menarik lainnya yang dirancang untuk memperkaya pengalaman yang  memberikan wawasan baru, serta inspirasi.</p>
             <div class="event" id="event-scroll">
               <div class="event1">
                 <img src="asset/poster-ngopi.png" alt="Gambar Event 1" />
@@ -460,11 +459,10 @@
     document.getElementById('payBtn').addEventListener('click', function() {
       let name = document.getElementById('name').value;
       let address = document.getElementById('address').value;
-      let email = document.getElementById('email').value;
       let phone = document.getElementById('phone').value;
       let paymentMethod = document.querySelector('input[name="payment"]:checked').value;
     
-      if (name && address && email && phone && paymentMethod) {
+      if (name && address && phone && paymentMethod) {
           alert('Pembayaran berhasil!');
           document.getElementById('paymentPopup').style.display = 'none';
       } else {
