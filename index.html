@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
   <title>SKRT! - Segelas Rasa & Makna</title>
-  <link rel="icon" type="image/png" href="/asset/skrt.png">
+  <link rel="icon" type="image/png" href="https://haruku24.github.io/skrtweb_1/asset/skrt.png">
   <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -246,15 +246,15 @@
               
               <h6>NGOPI</h6>
               <div class="date">
-                <span class="icon"><img src="/asset/Kalender.png" alt="kalender" style="height: 30px; width:auto;"></span>
+                <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/Kalender.png" alt="kalender" style="height: 30px; width:auto;"></span>
                 <p>Sabtu, 3 Agustus 2024<br><span class="detail">Ba'da Isya - selesai</span></p>
             </div>
             <div class="location">
-                <span class="icon"><img src="/asset/location.png" alt="location" style="height: 30px; width:auto;"></span>
+                <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/location.png" alt="location" style="height: 30px; width:auto;"></span>
                 <p>Kedai Rarahaja<br><span class="detail">Jl. Panatayuda II, Nagasari, Karawang Barat</span></p>
             </div>
             <div class="price">
-                <span class="icon"><img src="/asset/tickets.png" alt="price" style="height: 30px; width:auto;"></span>
+                <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/tickets.png" alt="price" style="height: 30px; width:auto;"></span>
                 <p>HTM: Rp. 50.000,-<br><span class="detail">Sudah termasuk benefit yang didapat</span></p>
             </div>
             <button class="btn_pesan" onclick="window.location.href='pembayaran.html';">Pesan Tiket</button>
@@ -266,7 +266,7 @@
         <div class="popup-content">
             <span class="close-btn" id="closePopupBtn">&times;</span>
             <div class="popup-left">
-                <h2>Informasi Pembeli</h2>
+                <h2>INFORMASI PRIBADI</h2>
                 <form id="buyerInfoForm">
                     <div class="form-group">
                         <label for="name">Nama:</label>
@@ -277,44 +277,48 @@
                         <input type="text" id="address" name="address" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
                         <label for="phone">No HP:</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </form>
             </div>
             <div class="popup-right">
-                <h2>Metode Pembayaran</h2>
-                <form id="paymentMethodForm">
-                    <div class="payment-method">
-                        <input type="radio" id="mandiri" name="payment" value="Mandiri" required>
-                        <label for="mandiri">Bank Mandiri</label>
-                    </div>
-                    <div class="payment-method">
-                        <input type="radio" id="bca" name="payment" value="BCA" required>
-                        <label for="bca">BCA</label>
-                    </div>
-                    <div class="payment-method">
-                        <input type="radio" id="ovo" name="payment" value="OVO" required>
-                        <label for="ovo">OVO</label>
-                    </div>
-                    <div class="payment-method">
-                        <input type="radio" id="dana" name="payment" value="Dana" required>
-                        <label for="dana">Dana</label>
-                    </div>
-                </form>
-
-                <h2>Detail Pemesanan</h2>
-                <p>Nama Event: Event Title</p>
-                <p>Jumlah Tiket: 1</p>
-                <p>Harga: Rp 100.000</p>
+                <h2>METODE PEMBAYARAN</h2>
+                <div class="dropdown-container">
+                  <select id="payment-method" class="dropdown">
+                      <optgroup label="Rekening Bank">
+                          <option value="mandiri" data-icon="asset/mandiri.jpg">Mandiri</option>
+                          <option value="bca" data-icon="/asset/bca.jpg">BCA</option>
+                          <option value="bni" data-icon="/asset/bni.jpg">BNI</option>
+                          <option value="bri" data-icon="asset/bri.jpg">BRI</option>
+                      </optgroup>
+                      <optgroup label="E-Wallet">
+                          <option value="ovo" data-icon="images/ovo-icon.png">Ovo</option>
+                          <option value="dana" data-icon="images/dana-icon.png">Dana</option>
+                          <option value="gopay" data-icon="images/gopay-icon.png">GoPay</option>
+                          <option value="linkaja" data-icon="images/linkaja-icon.png">LinkAja</option>
+                      </optgroup>
+                      <optgroup label="QRIS">
+                          <option value="qris" data-icon="images/qris-icon.png">QRIS</option>
+                      </optgroup>
+                  </select>
+              </div>
+                <br><br>
+                <h2>DETAIL PEMESANAN</h2>
+                <p>Ngopi - Segelas Rasa & Makna</p>
+                <div class="detail-price" style="display: flex;">
+                  <div>
+                    <p>Jumlah Tiket</p>
+                    <p>Harga</p>
+                  </div>
+                  <div>
+                    <p>1 pc</p>
+                    <p>Rp. 50.000</p>
+                  </div>
+                </div>
 
                 <div class="btn-group">
                     <button id="payBtn" class="main-btn">Bayar Sekarang</button>
-                    <button id="cancelBtn" class="cancel-btn">Kembali</button>
                 </div>
             </div>
         </div>

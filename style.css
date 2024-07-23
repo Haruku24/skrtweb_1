@@ -610,7 +610,7 @@ label {
 }
 
 input[type="text"], input[type="email"], input[type="tel"] {
-    width: 100%;
+    width: 94%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -643,6 +643,44 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 .cancel-btn:hover {
     background-color: #c82333;
+}
+
+/*Dropdown Payment*/
+
+.dropdown-container {
+  position: relative;
+  width: 100;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  background-size: 20px;
+}
+
+.dropdown option {
+  padding: 10px;
+}
+
+.dropdown optgroup {
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+}
+
+.dropdown-container::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #777;
 }
 
 /*Media Responsive View*/
@@ -724,6 +762,18 @@ input[type="text"], input[type="email"], input[type="tel"] {
   header .intro .intro-kanan .kolaborasi img{
     width: 30px;
     height: auto;
+  }
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    display: block;
+    justify-content: center;
+    position: relative;
+  }
+  .popup-left, .popup-right {
+    width: 100%;
   }
 
 }
