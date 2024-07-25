@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
   <title>SKRT! - Segelas Rasa & Makna</title>
-  <link rel="icon" type="image/png" href="https://haruku24.github.io/skrtweb_1/asset/skrt.png">
+  <link rel="icon" type="image/png" href="/asset/skrt.png">
   <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -243,15 +243,15 @@
               
               <h6>NGOPI</h6>
               <div class="date">
-                <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/Kalender.png" alt="kalender" style="height: 30px; width:auto;"></span>
+                <span class="icon"><img src="/asset/Kalender.png" alt="kalender" style="height: 30px; width:auto;"></span>
                 <p>Sabtu, 3 Agustus 2024<br><span class="detail">Ba'da Isya - selesai</span></p>
             </div>
             <div class="location">
-                <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/location.png" alt="location" style="height: 30px; width:auto;"></span>
+                <span class="icon"><img src="/asset/location.png" alt="location" style="height: 30px; width:auto;"></span>
                 <p>Kedai Rarahaja<br><span class="detail">Jl. Panatayuda II, Nagasari, Karawang Barat</span></p>
             </div>
             <div class="price">
-                <span class="icon"><img src="https://haruku24.github.io/skrtweb_1/asset/tickets.png" alt="price" style="height: 30px; width:auto;"></span>
+                <span class="icon"><img src="/asset/tickets.png" alt="price" style="height: 30px; width:auto;"></span>
                 <p>HTM: Rp. 50.000,-<br><span class="detail">Sudah termasuk benefit yang didapat</span></p>
             </div>
             <button id="buyTicketBtn" class="main-btn">Pesan Tiket</button>
@@ -260,65 +260,61 @@
 
       <div id="paymentPopup" class="popup">
         <div class="popup-content">
-            <span class="close-btn" id="closePopupBtn">&times;</span>
-            <div class="popup-left">
-                <h2>INFORMASI PRIBADI</h2>
-                <form id="buyerInfoForm">
-                    <div class="form-group">
-                        <label for="name">Nama:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Alamat:</label>
-                        <input type="text" id="address" name="address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">No HP:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </form>
-            </div>
-            <div class="popup-right">
-                <h2>METODE PEMBAYARAN</h2>
-                <div class="dropdown-container">
-                  <select id="payment-method" class="dropdown">
-                      <optgroup label="Rekening Bank">
-                          <option value="mandiri" data-icon="asset/mandiri.jpg">Mandiri</option>
-                          <option value="bca" data-icon="/asset/bca.jpg">Bank BCA</option>
-                          <option value="bni" data-icon="/asset/bni.jpg">Bank BNI</option>
-                          <option value="bri" data-icon="asset/bri.jpg">Bank BRI</option>
-                      </optgroup>
-                      <optgroup label="E-Wallet">
-                          <option value="ovo" data-icon="images/ovo-icon.png">OVO</option>
-                          <option value="dana" data-icon="images/dana-icon.png">Dana</option>
-                          <option value="gopay" data-icon="images/gopay-icon.png">GoPay</option>
-                          <option value="linkaja" data-icon="images/linkaja-icon.png">LinkAja</option>
-                      </optgroup>
-                      <optgroup label="QRIS">
-                          <option value="qris" data-icon="images/qris-icon.png">QRIS</option>
-                      </optgroup>
-                  </select>
+          <span class="close-btn" id="closePopupBtn">&times;</span>
+          <div class="popup-left">
+            <h2>INFORMASI PRIBADI</h2>
+            <form id="buyerInfoForm">
+              <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
               </div>
-                <br><br>
-                <h2>DETAIL PEMESANAN</h2>
-                <p>Ngopi - Segelas Rasa & Makna</p>
-                <div class="detail-price">
-                  <div>
-                    <p>Jumlah Tiket</p>
-                    <p>Harga</p>
-                  </div>
-                  <div>
-                    <p>1 pc</p>
-                    <p>Rp. 50.000</p>
-                  </div>
-                </div>
-
-                <div class="btn-group">
-                    <button id="payBtn" class="main-btn">Bayar Sekarang</button>
-                </div>
+              <div class="form-group">
+                <label for="address">Alamat:</label>
+                <input type="text" id="address" name="address" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">No HP:</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </form>
+          </div>
+          <div class="popup-right">
+            <h2>METODE PEMBAYARAN</h2>
+            <div class="dropdown-container">
+              <select id="payment-method" class="dropdown">
+                <optgroup label="Rekening Bank">
+                  <option value="mandiri">Bank Mandiri</option>
+                  <option value="bca">Bank BSI</option>
+                </optgroup>
+                <optgroup label="E-Wallet">
+                  <option value="ovo">OVO</option>
+                  <option value="dana">Dana</option>
+                  <option value="linkaja">LinkAja</option>
+                </optgroup>
+                <optgroup label="QRIS">
+                  <option value="qris">QRIS</option>
+                </optgroup>
+              </select>
             </div>
+            <br><br>
+            <h2>DETAIL PEMESANAN</h2>
+            <p>Ngopi - Segelas Rasa & Makna</p>
+            <div class="detail-price">
+              <div>
+                <p>Jumlah Tiket</p>
+                <p>Harga</p>
+              </div>
+              <div>
+                <p>1 pc</p>
+                <p>Rp. 50.000</p>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button id="payBtn" class="main-btn">Bayar Sekarang</button>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
       <section id="events">
         <div class="layar-dalam">
@@ -331,14 +327,14 @@
                 <h6>NGOPI</h6>
                 <span>Segelas Rasa & Makna</span>
                 <p>Sabtu, 3 Agustus 2024</p>
-                <button class="btn_pesan" onclick="window.location.href='pembayaran.html';">Pesan Tiket</button>
+                <button class="btn_pesan" onclick="window.location.href='#tentang-event';">Tentang Event Ini</button>
               </div>
               <div class="event2">
-                <img src="asset/poster-ngopi.png" alt="Gambar Event 2" />
+                <img src="asset/skrtcamp.jpeg" alt="Gambar Event 2" />
                 <h6>SKRT Camp</h6>
                 <span>Diskusi Santai Bernuansa Alam</span>
                 <p>Segera Hadir</p>
-                <button class="btn_pesan">Segera Hadir</button>
+                <button >Segera Hadir</button>
               </div>              
               </div>
             </div>
@@ -416,6 +412,8 @@
       </div>
     </footer>        
   </div>
+
+  <script src="script.js"></script>
   <script>
     // Event listener for scroll events to change navbar style
     window.addEventListener('scroll', function() {
@@ -452,21 +450,35 @@
     document.getElementById('cancelBtn').addEventListener('click', function() {
       document.getElementById('paymentPopup').style.display = 'none';
     });
-    
-    document.getElementById('payBtn').addEventListener('click', function() {
-      let name = document.getElementById('name').value;
-      let address = document.getElementById('address').value;
-      let phone = document.getElementById('phone').value;
-      let paymentMethod = document.querySelector('input[name="payment"]:checked').value;
-    
-      if (name && address && phone && paymentMethod) {
-          alert('Pembayaran berhasil!');
-          document.getElementById('paymentPopup').style.display = 'none';
-      } else {
-          alert('Mohon lengkapi semua informasi!');
-      }
+
+    document.getElementById('payBtn').addEventListener('click', function () {
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const phone = document.getElementById('phone').value;
+      const paymentMethod = document.getElementById('payment-method').value;
+
+      fetch('http://localhost:3307/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          address: address,
+          phone: phone,
+          paymentMethod: paymentMethod
+        })
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     });
+  
     
-  </script>  
+    </script>  
 </body>
 </html>

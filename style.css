@@ -260,6 +260,10 @@ section p.ringkasan{
   border: none;
 }
 
+.btn_pesan:hover{
+  background-color: #355833;
+}
+
 .event h6 {
   margin: 0;
   padding: 0;
@@ -418,15 +422,12 @@ input, select, button {
 }
 
 button {
-  background-color: #333;
+  background-color: #707070;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #555;
-}
 
 
 .navbar-scrolled {
@@ -553,7 +554,7 @@ span.detail{
 }
 
 .main-btn:hover {
-    background-color: #233627;
+    background-color: #355833;
 }
 
 .popup {

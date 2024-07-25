@@ -47,3 +47,29 @@ document.getElementById("confirmOrder").addEventListener("click", function () {
   }
 });
 
+
+document.getElementById('payBtn').addEventListener('click', function() {
+  let name = document.getElementById('name').value;
+  let address = document.getElementById('address').value;
+  let phone = document.getElementById('phone').value;
+  let paymentMethod = document.getElementById('payment-method').value;
+
+  if (name && address && phone && paymentMethod) {
+      fetch('/pay', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, address, phone, paymentMethod })
+      })
+      .then(response => response.text())
+      .then(data => {
+          alert(data);
+          document.getElementById('paymentPopup').style.display = 'none';
+      })
+      .catch(error => console.error('Error:', error));
+  } else {
+      alert('Mohon lengkapi semua informasi!');
+  }
+});
+
